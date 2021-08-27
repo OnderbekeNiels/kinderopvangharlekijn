@@ -1,0 +1,71 @@
+
+/* Global variables */
+:root{
+
+    /* Colors */
+    --global-color-neutral-500: #2B2B2B;
+
+    /* Alpha */
+    --global-color-alpha: 203;
+
+    --global-color-alpha-100: hsl(var(--global-color-alpha), 100%, 90%);
+    --global-color-alpha-200: hsl(var(--global-color-alpha), 100%, 80%);
+    --global-color-alpha-300: hsl(var(--global-color-alpha), 68%, 70%);
+    --global-color-alpha-400: hsl(var(--global-color-alpha), 61%, 62%);
+    --global-color-alpha-500: hsl(var(--global-color-alpha), 55%, 55%);
+    --global-color-alpha-600: hsl(var(--global-color-alpha), 54%, 46%);
+    --global-color-alpha-700: hsl(var(--global-color-alpha), 60%, 41%);
+    --global-color-alpha-800: hsl(var(--global-color-alpha), 74%, 29%);
+    --global-color-alpha-900: hsl(var(--global-color-alpha), 90%, 25%);
+
+    /* Accents */
+    --global-color-accent-1: #D9626B;
+    --global-color-accent-2: #97BC91;
+}
+
+
+
+html{
+
+}
+
+body {
+    --page-color: var(--global-color-neutral-500);
+    color: var(--page-color);
+    background-color: #F5F5F5;
+    font-size: 1rem;
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.1875;
+
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+h1,
+h2 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+p {
+	font-size: 1rem;
+}
