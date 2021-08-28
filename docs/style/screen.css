@@ -42,6 +42,8 @@
 	--global-whitespace-xxl: calc(var(--global-baseline) * 5);
 	--global-whitespace-xxxl: calc(var(--global-baseline) * 8);
 	--global-whitespace-xxxxl: calc(var(--global-baseline) * 10);
+
+    --global-box-shadow: 0px 3px 6px #00000029;
 }
 
 html {
@@ -58,7 +60,6 @@ body {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow: hidden;
 }
 
 *,
@@ -117,8 +118,8 @@ p {
 
 .c-header-logo__svg {
 	height: 2.5rem;
-	fill: var(--global-color-neutral-100);
-	stroke: var(--global-color-neutral-100);
+	fill: var(--global-color-alpha-900);
+	stroke: var(--global-color-neutral-900);
 	margin-right: var(--global-whitespace-sm);
 }
 
@@ -170,9 +171,50 @@ p {
 	}
 }
 
+/* Intro */
+
+.c-intro-info {
+	color: var(--global-color-neutral-100);
+	margin: var(--global-whitespace-xxl) 0;
+}
+
+.c-intro-info__title {
+	font-size: 2rem;
+	margin-top: var(--global-whitespace-sm);
+}
+
+.c-intro-visual {
+	position: relative;
+	display: block;
+	height: 16rem;
+}
+
+.c-intro-visual__blob {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+
+    fill: var(--global-color-accent-1);
+}
+
+.c-intro-visual__img {
+	position: absolute;
+	width: 18rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+    border-radius: 5px;
+    box-shadow: var(--global-box-shadow);
+}
+
+/* OBJECTS */
+
 .o-section {
-	display: flex;
-    justify-content: center;
+	width: 100%;
 }
 
 .o-section-color--alpha {
@@ -181,12 +223,32 @@ p {
 
 .o-row {
 	padding: var(--global-whitespace-md);
-    width: 100%;
+	width: 100%;
 	max-width: 83rem;
+	margin: 0 auto;
 }
 
 @media screen and (min-width: 67rem) {
 	.o-row {
 		padding: var(--global-whitespace-lg);
 	}
+}
+
+.o-layout {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.o-layout__item {
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.o-layout__item + .o-layout__item {
+	/* margin-left: var(--global-whitespace-xxxl); */
+}
+
+.o-layout__item-1-of-2 {
+	/* flex-basis: calc(100%/2); */
+	width: 100%;
 }
