@@ -197,9 +197,12 @@ p {
 
 .c-header-logo__svg {
 	height: 2.5rem;
-	fill: var(--global-color-alpha-900);
-	stroke: var(--global-color-neutral-900);
+	fill: var(--global-color-accent-1);
+	stroke: var(--global-color-accent-1);
 	margin-right: var(--global-whitespace-sm);
+	background-color:#ffffffcc;
+	padding: 0.125rem;
+	border-radius: 5px;
 }
 
 .c-header-logo__text {
