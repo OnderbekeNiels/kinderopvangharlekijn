@@ -338,11 +338,21 @@ p {
 	}
 }
 
+/* Team */
+
+.c-team{
+	color: var(--global-color-neutral-100);
+}
+
 /* UTILITIES */
 
 .u-border-radius__bottom--lg {
 	border-bottom-left-radius: var(--global-border-radius);
 	border-bottom-right-radius: var(--global-border-radius);
+}
+
+.u-border-radius--lg {
+	border-radius: var(--global-border-radius);
 }
 
 .u-box-shadow {
@@ -357,8 +367,8 @@ p {
 	background-color: var(--global-color-alpha-500);
 }
 
-.u-background-color--alpha-900 {
-	background-color: var(--global-color-alpha-900);
+.u-background-color--alpha-800 {
+	background-color: var(--global-color-alpha-800);
 }
 
 .u-flex--row-reverse{
