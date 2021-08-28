@@ -97,7 +97,6 @@ p {
 /* Header */
 
 .c-header {
-	background-color: var(--global-color-alpha-500);
 	padding: var(--global-whitespace-md) 0;
 
 	display: flex;
@@ -172,12 +171,22 @@ p {
 }
 
 .o-section {
+	display: flex;
+    justify-content: center;
+}
+
+.o-section-color--alpha {
+	background-color: var(--global-color-alpha-500);
+}
+
+.o-row {
 	padding: var(--global-whitespace-md);
-    max-width: 83rem;
+    width: 100%;
+	max-width: 83rem;
 }
 
 @media screen and (min-width: 67rem) {
-	.o-section {
+	.o-row {
 		padding: var(--global-whitespace-lg);
 	}
 }
