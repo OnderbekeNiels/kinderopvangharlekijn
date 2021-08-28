@@ -41,7 +41,7 @@
 	--global-whitespace-xl: calc(var(--global-baseline) * 4);
 	--global-whitespace-xxl: calc(var(--global-baseline) * 5);
 	--global-whitespace-xxxl: calc(var(--global-baseline) * 8);
-	--global-whitespace-xxxxl: calc(var(--global-baseline) * 10);
+	--global-whitespace-xxxxl: calc(var(--global-baseline) * 12);
 
 	--global-box-shadow: 0px 3px 6px #00000029;
 
@@ -85,6 +85,7 @@ h1 {
 
 h2 {
 	font-size: 2rem;
+	margin-bottom: var(--global-whitespace-md);
 }
 
 h3 {
@@ -108,14 +109,13 @@ p {
 
 .o-section {
 	width: 100%;
+	margin-bottom: var(--global-whitespace-xxxxl);
 }
 
-.o-section-color--alpha {
-	background-color: var(--global-color-alpha-500);
-}
+
 
 .o-row {
-	padding: var(--global-whitespace-md);
+	padding: 0 var(--global-whitespace-md);
 	width: 100%;
 	max-width: 83rem;
 	margin: 0 auto;
@@ -123,7 +123,7 @@ p {
 
 @media screen and (min-width: 67rem) {
 	.o-row {
-		padding: var(--global-whitespace-lg);
+		padding: 0 var(--global-whitespace-lg);
 	}
 }
 
@@ -344,4 +344,20 @@ p {
 
 .u-box-shadow {
 	box-shadow: var(--global-box-shadow);
+}
+
+.u-color-accent-1{
+	color: var(--global-color-accent-1);
+}
+
+.u-background-color--alpha {
+	background-color: var(--global-color-alpha-500);
+}
+
+.u-background-color--alpha-900 {
+	background-color: var(--global-color-alpha-900);
+}
+
+.u-flex--row-reverse{
+	flex-direction: row-reverse;
 }
