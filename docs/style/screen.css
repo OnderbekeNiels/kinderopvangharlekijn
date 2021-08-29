@@ -41,7 +41,7 @@
 	--global-whitespace-xl: calc(var(--global-baseline) * 4);
 	--global-whitespace-xxl: calc(var(--global-baseline) * 5);
 	--global-whitespace-xxxl: calc(var(--global-baseline) * 8);
-	--global-whitespace-xxxxl: calc(var(--global-baseline) * 12);
+	--global-whitespace-xxxxl: calc(var(--global-baseline) * 14);
 
 	--global-box-shadow: 0px 3px 6px #00000029;
 
@@ -90,6 +90,7 @@ h2 {
 
 h3 {
 	font-size: 1.5rem;
+	font-weight: 500;
 }
 
 p {
@@ -128,7 +129,7 @@ p {
 .o-layout {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	flex-shrink: 0;
 }
 
@@ -137,12 +138,13 @@ p {
 	align-items: center;
 }
 
-.o-layout__item + .o-layout__item {
-}
-
 @media screen and (min-width: 40rem) {
 	.o-layout__item-1-of-2 {
 		flex-basis: calc((100% / 2) - 2rem);
+	}
+
+	.o-layout {
+		justify-content: space-between;
 	}
 }
 
@@ -219,7 +221,7 @@ p {
 }
 
 .c-header-nav__item:hover {
-	color: var(--global-color-alpha-900);
+	color: var(--global-color-alpha-800);
 	transform: scale(1.05);
 }
 
@@ -342,6 +344,45 @@ p {
 	color: var(--global-color-neutral-100);
 }
 
+.c-team-member {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.c-team-member--1 {
+	margin-bottom: var(--global-whitespace-xxxxl);
+}
+
+.c-team-member__img-holder {
+	--radius: 15rem;
+	border-radius: 100%;
+	width: var(--radius);
+	height: var(--radius);
+	background-color: var(--global-color-alpha-100);
+	color: var(--global-color-neutral-900);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-bottom: var(--global-whitespace-xl);
+}
+
+.c-team-member__bio-icon {
+	height: 2rem;
+	font-weight: 500;
+	transform: rotate(180deg);
+	fill: var(--global-color-alpha-100);
+}
+
+@media screen and (min-width: 40rem) {
+	.c-team-member {
+		margin-bottom: 0;
+	}
+}
+
 /* Info */
 
 .c-info__visual {
@@ -349,6 +390,17 @@ p {
 	margin-top: var(--global-whitespace-xxl);
 
 	min-width: 20rem;
+}
+
+@media screen and (min-width: 40rem) {
+	.c-info__visual {
+		margin-top: 0;
+	}
+}
+
+.c-content-container {
+	padding-top: var(--global-whitespace-xxxl);
+	padding-bottom: var(--global-whitespace-xxxl);
 }
 
 /* UTILITIES */
@@ -380,4 +432,31 @@ p {
 
 .u-flex--row-reverse {
 	flex-direction: row-reverse;
+}
+
+.u-text-align--center {
+	text-align: center;
+}
+
+.u-mb--sm {
+}
+
+.u-mb--md {
+	margin-bottom: var(--global-whitespace-md);
+}
+
+.u-mb--xl {
+	margin-bottom: var(--global-whitespace-xl);
+}
+
+.u-mb--xxl {
+	margin-bottom: var(--global-whitespace-xxl);
+}
+
+.u-max-width--sm {
+	max-width: 21rem;
+}
+
+.u-justify-content--center {
+	justify-content: center;
 }
