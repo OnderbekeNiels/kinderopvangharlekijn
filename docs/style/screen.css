@@ -45,7 +45,7 @@
 
 	--global-box-shadow: 0px 3px 6px #00000029;
 
-	--global-border-radius: 50px;
+	--global-border-radius: 20px;
 }
 
 html {
@@ -111,8 +111,6 @@ p {
 	width: 100%;
 	margin-bottom: var(--global-whitespace-xxxxl);
 }
-
-
 
 .o-row {
 	padding: 0 var(--global-whitespace-md);
@@ -200,7 +198,7 @@ p {
 	fill: var(--global-color-accent-1);
 	stroke: var(--global-color-accent-1);
 	margin-right: var(--global-whitespace-sm);
-	background-color:#ffffffcc;
+	background-color: #ffffffcc;
 	padding: 0.125rem;
 	border-radius: 5px;
 }
@@ -340,8 +338,17 @@ p {
 
 /* Team */
 
-.c-team{
+.c-team {
 	color: var(--global-color-neutral-100);
+}
+
+/* Info */
+
+.c-info__visual {
+	padding: 0 var(--global-whitespace-md);
+	margin-top: var(--global-whitespace-xxl);
+
+	min-width: 20rem;
 }
 
 /* UTILITIES */
@@ -359,7 +366,7 @@ p {
 	box-shadow: var(--global-box-shadow);
 }
 
-.u-color-accent-1{
+.u-color-accent-1 {
 	color: var(--global-color-accent-1);
 }
 
@@ -371,6 +378,6 @@ p {
 	background-color: var(--global-color-alpha-800);
 }
 
-.u-flex--row-reverse{
+.u-flex--row-reverse {
 	flex-direction: row-reverse;
 }
