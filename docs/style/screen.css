@@ -110,6 +110,15 @@ p {
 	}
 }
 
+@keyframes fly-in {
+	from {
+		transform: translateX(100vw);
+	}
+	to {
+		transform: translateX(0vw);
+	}
+}
+
 /* OBJECTS */
 
 .o-section {
@@ -202,7 +211,7 @@ p {
 }
 
 .c-mobile-nav {
-	display: flex;
+	display: none;
 	position: absolute;
 	width: 100vw;
 	height: 100vh;
@@ -213,13 +222,13 @@ p {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	transform: translateX(100vw);
-	transition: all 0.2s ease-out;
-	overflow-x: hidden;
 }
 
+
+
 .c-mobile-nav.is-visible {
-	transform: translateX(0vw);
+	display: flex;
+	animation: fly-in 0.2s;
 }
 
 .c-mobile-nav__item {

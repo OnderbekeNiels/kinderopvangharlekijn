@@ -11,9 +11,12 @@ const listenToMobileMenu = () => {
 		handleMenuChange();
 	});
 
-    mobileNav.addEventListener('click', function(){
-        mobileNavIsVisible = false;
-    })
+	const items = document.querySelectorAll('.c-mobile-nav__link');
+	for (const i of items) {
+		i.addEventListener('click', function () {
+			mobileNav.classList.remove('is-visible');
+		});
+	}
 };
 
 const handleMenuChange = () => {
