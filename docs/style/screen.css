@@ -41,7 +41,7 @@
 	--global-whitespace-xl: calc(var(--global-baseline) * 4);
 	--global-whitespace-xxl: calc(var(--global-baseline) * 5);
 	--global-whitespace-xxxl: calc(var(--global-baseline) * 8);
-	--global-whitespace-xxxxl: calc(var(--global-baseline) * 14);
+	--global-whitespace-xxxxl: calc(var(--global-baseline) * 12);
 
 	--global-box-shadow: 0px 3px 6px #00000029;
 
@@ -49,6 +49,7 @@
 }
 
 html {
+	scroll-behavior: smooth;
 }
 
 body {
@@ -211,6 +212,7 @@ p {
 }
 
 .c-header-nav__item {
+	text-decoration: none;
 	font-size: 1.75rem;
 	font-weight: 500;
 
@@ -269,6 +271,8 @@ p {
 .c-intro {
 	padding-top: var(--global-whitespace-xl);
 	padding-bottom: var(--global-whitespace-xl);
+
+	justify-content: space-between;
 }
 
 .c-intro-info {
