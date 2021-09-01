@@ -15,21 +15,24 @@
 	--global-color-neutral-900: #011921;
 
 	/* Alpha */
-	--global-color-alpha: 203;
+	--global-color-alpha: 199;
 
 	--global-color-alpha-100: hsl(var(--global-color-alpha), 100%, 90%);
 	--global-color-alpha-200: hsl(var(--global-color-alpha), 100%, 80%);
 	--global-color-alpha-300: hsl(var(--global-color-alpha), 68%, 70%);
 	--global-color-alpha-400: hsl(var(--global-color-alpha), 61%, 62%);
-	--global-color-alpha-500: hsl(var(--global-color-alpha), 55%, 55%);
+	--global-color-alpha-500: hsl(var(--global-color-alpha), 78%, 55%);
 	--global-color-alpha-600: hsl(var(--global-color-alpha), 54%, 46%);
 	--global-color-alpha-700: hsl(var(--global-color-alpha), 60%, 41%);
 	--global-color-alpha-800: hsl(var(--global-color-alpha), 74%, 29%);
 	--global-color-alpha-900: hsl(var(--global-color-alpha), 90%, 25%);
 
 	/* Accents */
-	--global-color-accent-1: #d9626b;
-	--global-color-accent-2: #97bc91;
+	/* --global-color-accent-1: #d9626b;
+	--global-color-accent-2: #97bc91; */
+
+	--global-color-accent-1: rgb(233, 100, 126);
+	--global-color-accent-2: rgb(48,209,88);
 
 	/* Layout */
 	--global-baseline: 8px;
@@ -55,7 +58,7 @@ html {
 body {
 	--page-color: var(--global-color-neutral-800);
 	color: var(--page-color);
-	background-color: #f5f5f5;
+	background-color: #F2F2F7;
 	font-size: 1rem;
 	font-family: 'Work Sans', sans-serif;
 	line-height: 1.1875;
@@ -100,7 +103,7 @@ p {
 
 @keyframes in-out {
 	from {
-		transform: scale(0.97);
+		transform: scale(0.95);
 	}
 	to {
 		transform: scale(1);
@@ -223,12 +226,7 @@ p {
 }
 
 .c-header-nav__item:hover {
-	color: var(--global-color-alpha-800);
-	transform: scale(1.05);
-}
-
-.c-header-nav__item:active {
-	transform: scale(0.9);
+	color: var(--global-color-alpha-900);
 }
 
 .c-header-menu {
@@ -378,7 +376,7 @@ p {
 	height: 2rem;
 	font-weight: 500;
 	transform: rotate(180deg);
-	fill: var(--global-color-alpha-100);
+	fill: var(--global-color-accent-1);
 }
 
 @media screen and (min-width: 40rem) {
@@ -394,6 +392,7 @@ p {
 	margin-top: var(--global-whitespace-xxl);
 
 	min-width: 20rem;
+	max-height: 26rem;
 }
 
 @media screen and (min-width: 40rem) {
