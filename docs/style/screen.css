@@ -485,6 +485,11 @@ p {
 	border-radius: var(--global-border-radius);
 }
 
+.u-border-radius__top--lg {
+	border-top-left-radius: var(--global-border-radius);
+	border-top-right-radius: var(--global-border-radius);
+}
+
 .u-box-shadow {
 	box-shadow: var(--global-box-shadow);
 }
@@ -507,6 +512,10 @@ p {
 
 .u-text-align--center {
 	text-align: center;
+}
+
+.u-mb--none {
+	margin-bottom: 0;
 }
 
 .u-mb--sm {
