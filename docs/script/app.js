@@ -10,6 +10,10 @@ const listenToMobileMenu = () => {
 	menuBtn.addEventListener('click', function () {
 		handleMenuChange();
 	});
+
+    mobileNav.addEventListener('click', function(){
+        mobileNavIsVisible = false;
+    })
 };
 
 const handleMenuChange = () => {
