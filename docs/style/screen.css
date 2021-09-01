@@ -53,7 +53,6 @@
 
 html {
 	scroll-behavior: smooth;
-	overflow-x: hidden;
 }
 
 body {
@@ -216,13 +215,12 @@ p {
 	text-align: center;
 	transform: translateX(100vw);
 	transition: all 0.2s ease-out;
+	overflow-x: hidden;
 }
 
 .c-mobile-nav.is-visible {
 	transform: translateX(0vw);
 }
-
-
 
 .c-mobile-nav__item {
 	margin: var(--global-whitespace-xxl);
