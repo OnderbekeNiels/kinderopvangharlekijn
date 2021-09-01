@@ -32,7 +32,7 @@
 	--global-color-accent-2: #97bc91; */
 
 	--global-color-accent-1: rgb(233, 100, 126);
-	--global-color-accent-2: rgb(48,209,88);
+	--global-color-accent-2: rgb(48, 209, 88);
 
 	/* Layout */
 	--global-baseline: 8px;
@@ -58,7 +58,7 @@ html {
 body {
 	--page-color: var(--global-color-neutral-800);
 	color: var(--page-color);
-	background-color: #F2F2F7;
+	background-color: #f2f2f7;
 	font-size: 1rem;
 	font-family: 'Work Sans', sans-serif;
 	line-height: 1.1875;
@@ -114,7 +114,13 @@ p {
 
 .o-section {
 	width: 100%;
-	margin-bottom: var(--global-whitespace-xxxxl);
+	margin-bottom: var(--global-whitespace-xxxl);
+}
+
+@media screen and (min-width: 40rem) {
+	.o-section {
+		margin-bottom: var(--global-whitespace-xxxxl);
+	}
 }
 
 .o-row {
@@ -402,8 +408,15 @@ p {
 }
 
 .c-content-container {
-	padding-top: var(--global-whitespace-xxxl);
-	padding-bottom: var(--global-whitespace-xxxl);
+	padding-top: var(--global-whitespace-xxl);
+	padding-bottom: var(--global-whitespace-xxl);
+}
+
+@media screen and (min-width: 40rem) {
+	.c-content-container {
+		padding-top: var(--global-whitespace-xxxl);
+		padding-bottom: var(--global-whitespace-xxxl);
+	}
 }
 
 /* UTILITIES */
