@@ -224,8 +224,6 @@ p {
 	text-align: center;
 }
 
-
-
 .c-mobile-nav.is-visible {
 	display: flex;
 	animation: fly-in 0.2s;
@@ -304,7 +302,7 @@ p {
 		margin-left: var(--global-whitespace-md);
 	}
 
-	.c-mobile-nav{
+	.c-mobile-nav {
 		display: none;
 	}
 }
@@ -336,7 +334,13 @@ p {
 
 .c-intro-info {
 	color: var(--global-color-neutral-100);
-	margin: var(--global-whitespace-xxl) 0;
+	margin-bottom: var(--global-whitespace-xxl);
+}
+
+@media screen and (min-width: 40rem) {
+	.c-intro-info {
+		margin: 0;
+	}
 }
 
 .c-intro-info__title {

@@ -20,9 +20,14 @@ const listenToMobileMenu = () => {
 };
 
 const handleMenuChange = () => {
-	mobileNavIsVisible
-		? mobileNav.classList.remove('is-visible')
-		: mobileNav.classList.add('is-visible');
+	const body = document.querySelector('body');
+	if (mobileNavIsVisible) {
+		mobileNav.classList.remove('is-visible');
+		body.style = 'overflow: initial;';
+	} else {
+		mobileNav.classList.add('is-visible');
+		body.style = 'overflow: hidden;';
+	}
 
 	mobileNavIsVisible = !mobileNavIsVisible;
 };
