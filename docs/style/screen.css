@@ -567,6 +567,26 @@ a:visited {
 	}
 }
 
+#map {
+  height: 25rem;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+  border-radius: var(--global-border-radius);
+  box-shadow: var(--global-box-shadow);
+}
+
+.c-map-link{
+	color: var(--global-color-alpha-500);
+	font-size: 1rem;
+}
+
+.c-map-link:visited{
+	color: var(--global-color-alpha-500);
+}
+
+
+
 /* UTILITIES */
 
 .u-border-radius__bottom--lg {

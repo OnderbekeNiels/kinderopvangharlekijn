@@ -5,6 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Kinderopvang Harlekijn | Sint-Martens-Latem</title>
 
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+			crossorigin=""
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -15,7 +21,13 @@
 		<link rel="stylesheet" href="style/reset.css" />
 		<link rel="stylesheet" href="style/screen.css" />
 
-		<script src="script/app.js"></script>
+		<script
+			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+			crossorigin=""
+			defer
+		></script>
+		<script defer src="script/app.js"></script>
 	</head>
 	<body>
 		<section
@@ -301,7 +313,9 @@
 				</svg>
 			</header>
 			<div class="c-content-container c-intro o-row o-layout">
-				<article class="c-intro-info o-layout__item u-align-items--center  o-layout__item-1-of-2">
+				<article
+					class="c-intro-info o-layout__item u-align-items--center  o-layout__item-1-of-2"
+				>
 					<div>
 						<h1 class="c-intro-info__title">Uw kind,<br />Onze zorg.</h1>
 						<p class="c-intro-info__sub">
@@ -1396,7 +1410,7 @@
 		>
 			<div class="o-row c-content-container">
 				<h2>Contact</h2>
-				<div class="c-contact">
+				<div class="c-contact u-mb--xl">
 					<article class="c-contact__item">
 						<div>
 							<h3>Adres</h3>
@@ -1419,6 +1433,7 @@
 						</div>
 					</article>
 				</div>
+				<div id="map"></div>
 			</div>
 		</section>
 		<footer class="c-footer">Created by Niels Onderbeke</footer>
