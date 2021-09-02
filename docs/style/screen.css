@@ -478,6 +478,48 @@ p {
 	}
 }
 
+/* Album */
+
+.c-album-container {
+	display: grid;
+	gap: var(--global-whitespace-xl);
+	outline: 1px solid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.c-album-item {
+	background: red;
+}
+
+.c-album-item::before {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+	padding-bottom: calc(3 / 4 * 100%);
+}
+
+.c-album-item--vert{
+	background: blue;
+	grid-row: span 2;
+}
+
+.c-album-item--vert::before {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+	padding-bottom: calc(6 / 4 * 100%);
+}
+
+
+@media screen and (min-width: 40rem) {
+	.c-album-container {
+		grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+	}
+}
+
 /* UTILITIES */
 
 .u-border-radius__bottom--lg {
