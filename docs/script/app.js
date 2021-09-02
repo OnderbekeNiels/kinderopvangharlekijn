@@ -46,32 +46,6 @@ const initMap = function () {
 	);
 };
 
-// const maakMarker = function (parkingObject) {
-// 	const colorClass = getCapacityColor(parkingObject.placesLeft),
-// 		arr_coords = parkingObject.coord;
-// 	layergroup.clearLayers();
-// 	let marker = L.marker(arr_coords, {
-// 		icon: getCapacityIcon(parkingObject.placesLeft),
-// 	}).addTo(layergroup);
-// 	marker.bindPopup(
-// 		`<div class="c-marker-content c-marker-content__places-left ${colorClass}">${parkingObject.placesLeft} places left</div><div class="c-marker-content c-marker-content__name">${parkingObject.name}</div><div class="c-marker-content c-marker-content__details">${parkingObject.address}</div><div class="c-marker-content c-marker-content__details">last update: ${parkingObject.updateTime}</div>`
-// 	);
-// };
-
-// const showPointer = function (record) {
-// 	for (const record of records) {
-// 		layergroup = L.layerGroup().addTo(map);
-// 		const parkingObject = {
-// 			coord: record.fields.geo_location,
-// 			address: record.fields.address,
-// 			name: record.fields.name,
-// 			placesLeft: record.fields.availablecapacity,
-// 			updateTime: record.fields.lastupdate,
-// 		};
-// 		maakMarker(parkingObject);
-// 	}
-// };
-
 document.addEventListener('DOMContentLoaded', function () {
 	closeBtn = document.querySelector('.js-mobile-nav__close');
 	menuBtn = document.querySelector('.js-menu-btn');
