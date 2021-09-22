@@ -60,7 +60,7 @@ body {
 	color: var(--page-color);
 	background-color: #f2f2f7;
 	font-size: 1rem;
-	font-family: 'Work Sans', sans-serif;
+	font-family: "Work Sans", sans-serif;
 	line-height: 1.1875;
 
 	box-sizing: border-box;
@@ -507,7 +507,7 @@ a:visited {
 }
 
 .c-album-item::before {
-	content: '';
+	content: "";
 	display: block;
 	height: 0;
 	width: 0;
@@ -568,24 +568,22 @@ a:visited {
 }
 
 #map {
-  height: 25rem;
-  /* The height is 400 pixels */
-  width: 100%;
-  /* The width is the width of the web page */
-  border-radius: var(--global-border-radius);
-  box-shadow: var(--global-box-shadow);
+	height: 25rem;
+	/* The height is 400 pixels */
+	width: 100%;
+	/* The width is the width of the web page */
+	border-radius: var(--global-border-radius);
+	box-shadow: var(--global-box-shadow);
 }
 
-.c-map-link{
+.c-map-link {
 	color: var(--global-color-alpha-500);
 	font-size: 1rem;
 }
 
-.c-map-link:visited{
+.c-map-link:visited {
 	color: var(--global-color-alpha-500);
 }
-
-
 
 /* UTILITIES */
 
