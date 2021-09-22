@@ -583,32 +583,16 @@ a:visited {
 	padding-bottom: calc(6 / 4 * 100%);
 }
 
-/* .c-album-source {
-	color: var(--global-color-neutral-100);
-	display: block;
-	font-weight: 700;
-	text-decoration: none;
-	background-color: var(--global-color-alpha-800);
-	text-align: center;
-	padding: var(--global-whitespace-md);
-	border-radius: var(--global-border-radius);
-	box-shadow: var(--global-box-shadow);
-	will-change: contents;
-
-	transition: 0.2s ease-out;
-} */
-
 .c-album-source {
-	color: var(--global-color-neutral-500);
+	color: var(--global-color-alpha-500);
+	font-size: 0.75rem;
 	display: block;
 	text-decoration: none;
 	text-align: right;
-
-	transition: 0.2s ease-out;
 }
 
 .c-album-source:visited {
-	color: var(--global-color-neutral-500);
+	color: var(--global-color-alpha-500);
 }
 
 @media screen and (min-width: 40rem) {
