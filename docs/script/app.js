@@ -1,6 +1,6 @@
 let mobileNavIsVisible = false;
 
-let closeBtn, menuBtn, mobileNav, map, openinghours;
+let closeBtn, menuBtn, mobileNav, map, openinghours, body;
 
 const provider =
 		"https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png",
@@ -20,15 +20,15 @@ const listenToMobileMenu = () => {
 	for (const i of items) {
 		i.addEventListener("click", function () {
 			mobileNav.classList.remove("is-visible");
+			body.style = "overflow: scroll;";
 		});
 	}
 };
 
 const handleMenuChange = () => {
-	const body = document.querySelector("body");
 	if (mobileNavIsVisible) {
 		mobileNav.classList.remove("is-visible");
-		body.style = "overflow: initial;";
+		body.style = "overflow: scroll;";
 	} else {
 		mobileNav.classList.add("is-visible");
 		body.style = "overflow: hidden;";
@@ -47,9 +47,7 @@ const initMap = function () {
 };
 
 const showCurrentOpeningDay = () => {
-	openinghours[new Date().getDay()-1].classList.add(
-		"u-font-weight--bold"
-	);
+	openinghours[new Date().getDay() - 1].classList.add("u-font-weight--bold");
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -57,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	menuBtn = document.querySelector(".js-menu-btn");
 	mobileNav = document.querySelector(".js-mobile-nav");
 	openinghours = document.querySelectorAll(".js-hour");
+	body = document.querySelector("body");
 
 	listenToMobileMenu();
 	initMap();
