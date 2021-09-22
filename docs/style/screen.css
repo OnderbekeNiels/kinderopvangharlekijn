@@ -32,7 +32,7 @@
 	--global-color-accent-2: #97bc91; */
 
 	--global-color-accent-1: rgb(233, 100, 126);
-	--global-color-accent-2: rgb(16, 136, 100);
+	--global-color-accent-2: rgb(15, 184, 133);
 
 	/* Layout */
 	--global-baseline: 8px;
@@ -173,7 +173,7 @@ a:visited {
 
 @media screen and (min-width: 40rem) {
 	.o-row {
-		padding: 0 var(--global-whitespace-lg);
+		padding: 0 var(--global-whitespace-xl);
 	}
 }
 
@@ -583,7 +583,7 @@ a:visited {
 	padding-bottom: calc(6 / 4 * 100%);
 }
 
-.c-album-source {
+/* .c-album-source {
 	color: var(--global-color-neutral-100);
 	display: block;
 	font-weight: 700;
@@ -596,15 +596,19 @@ a:visited {
 	will-change: contents;
 
 	transition: 0.2s ease-out;
-}
+} */
 
-.c-album-source:hover {
-	transform: translateY(-1.5px);
-	box-shadow: 0px 12px 10px #135e8129;
+.c-album-source {
+	color: var(--global-color-neutral-500);
+	display: block;
+	text-decoration: none;
+	text-align: right;
+
+	transition: 0.2s ease-out;
 }
 
 .c-album-source:visited {
-	color: var(--global-color-neutral-100);
+	color: var(--global-color-neutral-500);
 }
 
 @media screen and (min-width: 40rem) {
