@@ -1,44 +1,44 @@
 let mobileNavIsVisible = false;
 
-let closeBtn, menuBtn, mobileNav, map;
+let closeBtn, menuBtn, mobileNav, map, openinghours;
 
 const provider =
-		'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
+		"https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png",
 	copyright =
 		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>';
 
 const listenToMobileMenu = () => {
-	closeBtn.addEventListener('click', function () {
+	closeBtn.addEventListener("click", function () {
 		handleMenuChange();
 	});
 
-	menuBtn.addEventListener('click', function () {
+	menuBtn.addEventListener("click", function () {
 		handleMenuChange();
 	});
 
-	const items = document.querySelectorAll('.c-mobile-nav__link');
+	const items = document.querySelectorAll(".c-mobile-nav__link");
 	for (const i of items) {
-		i.addEventListener('click', function () {
-			mobileNav.classList.remove('is-visible');
+		i.addEventListener("click", function () {
+			mobileNav.classList.remove("is-visible");
 		});
 	}
 };
 
 const handleMenuChange = () => {
-	const body = document.querySelector('body');
+	const body = document.querySelector("body");
 	if (mobileNavIsVisible) {
-		mobileNav.classList.remove('is-visible');
-		body.style = 'overflow: initial;';
+		mobileNav.classList.remove("is-visible");
+		body.style = "overflow: initial;";
 	} else {
-		mobileNav.classList.add('is-visible');
-		body.style = 'overflow: hidden;';
+		mobileNav.classList.add("is-visible");
+		body.style = "overflow: hidden;";
 	}
 
 	mobileNavIsVisible = !mobileNavIsVisible;
 };
 
 const initMap = function () {
-	map = L.map('map').setView([51.008826989131, 3.6299759253685053], 15);
+	map = L.map("map").setView([51.008826989131, 3.6299759253685053], 15);
 	L.tileLayer(provider, { attribution: copyright }).addTo(map);
 	let marker = L.marker([51.008826989131, 3.6299759253685053]).addTo(map);
 	marker.bindPopup(
@@ -46,11 +46,19 @@ const initMap = function () {
 	);
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-	closeBtn = document.querySelector('.js-mobile-nav__close');
-	menuBtn = document.querySelector('.js-menu-btn');
-	mobileNav = document.querySelector('.js-mobile-nav');
+const showCurrentOpeningDay = () => {
+	openinghours[new Date().getDay()-1].classList.add(
+		"u-font-weight--bold"
+	);
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+	closeBtn = document.querySelector(".js-mobile-nav__close");
+	menuBtn = document.querySelector(".js-menu-btn");
+	mobileNav = document.querySelector(".js-mobile-nav");
+	openinghours = document.querySelectorAll(".js-hour");
 
 	listenToMobileMenu();
 	initMap();
+	showCurrentOpeningDay();
 });

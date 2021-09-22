@@ -642,6 +642,10 @@ a:visited {
 	color: var(--global-color-accent-1);
 }
 
+.u-color-alpha-900{
+	color: var(--global-color-alpha-900);
+}
+
 .u-background-color--alpha {
 	background-color: var(--global-color-alpha-500);
 	color: var(--global-color-neutral-100);
@@ -690,4 +694,8 @@ a:visited {
 
 .u-align-items--center {
 	align-items: center;
+}
+
+.u-font-weight--bold{
+	font-weight: bold;
 }
