@@ -470,6 +470,15 @@ a:visited {
 	justify-content: center;
 
 	margin-bottom: var(--global-whitespace-xl);
+	overflow: hidden;
+}
+
+.c-team-member__img{
+	--radius: 15rem;
+	width: var(--radius);
+	height: var(--radius);
+	object-fit: cover;
+
 }
 
 .c-team-member__bio-icon {
