@@ -224,25 +224,55 @@ a:visited {
 /* COMPONENTS */
 
 .c-timeline {
-	display: flex;
-}
-
-.c-timeline-item-holder{
-	width: 100%;
-
+	display: grid;
+	gap: var(--global-whitespace-lg);
+	grid-template-columns: 1fr 0.5rem 1fr;
 }
 
 .c-timeline-line{
 	width: 0.5rem;
 	border-radius: var(--global-border-radius);
-	background: var(--global-color-alpha-500);
+	background: linear-gradient(
+		0deg,
+		var(--global-color-alpha-700) 0%,
+		var(--global-color-alpha-500)
+	);
 }
 
 .c-timeline-item{
 	display: flex;
 	align-items: center;
 	max-width: 40rem;
-	transform: translateX(-1.25rem);
+	position: relative;
+	/* transform: translateX(-1.25rem); */
+}
+
+.c-timeline-item.c-timeline-item-left::after{
+	content: '';
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	border-radius: 100%;
+	right: -2.25rem;
+		background: linear-gradient(
+		0deg,
+		var(--global-color-accent-1) 0%,
+		var(--global-color-alpha-100)
+	);
+}
+
+.c-timeline-item.c-timeline-item-right::before{
+	content: '';
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	border-radius: 100%;
+	left: -2.25rem;
+	background: linear-gradient(
+		0deg,
+		var(--global-color-accent-1) 0%,
+		var(--global-color-alpha-100)
+	);
 }
 
 .c-timeline-item + .c-timeline-item{
@@ -763,6 +793,10 @@ a:visited {
 
 .u-text-align--center {
 	text-align: center;
+}
+
+.u-mt-xxxl{
+		margin-top: var(--global-whitespace-xxxl);
 }
 
 .u-mb--none {
