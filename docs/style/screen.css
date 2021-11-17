@@ -226,7 +226,7 @@ a:visited {
 .c-timeline {
 	display: grid;
 	gap: var(--global-whitespace-lg);
-	grid-template-columns: 1fr 0.5rem 1fr;
+	grid-template-columns: minmax(5rem, 1fr) 0.5rem minmax(5rem, 1fr);
 }
 
 .c-timeline-line{
@@ -244,6 +244,7 @@ a:visited {
 	align-items: center;
 	max-width: 40rem;
 	position: relative;
+	word-wrap: break-word; 
 	/* transform: translateX(-1.25rem); */
 }
 
@@ -302,11 +303,11 @@ a:visited {
 
 /* Dagverloop */
 
-.c-dagverloop-grid {
+/* .c-dagverloop-grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(10rem, 1fr));
 	gap: 1rem;
-}
+} */
 
 /* Header */
 
