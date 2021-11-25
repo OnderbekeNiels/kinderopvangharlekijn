@@ -20,7 +20,7 @@ const listenToMobileMenu = () => {
 	for (const i of items) {
 		i.addEventListener("click", function () {
 			mobileNav.classList.remove("is-visible");
-			body.style = "overflow: scroll;";
+			;
 		});
 	}
 };
@@ -28,10 +28,8 @@ const listenToMobileMenu = () => {
 const handleMenuChange = () => {
 	if (mobileNavIsVisible) {
 		mobileNav.classList.remove("is-visible");
-		body.style = "overflow: scroll;";
 	} else {
 		mobileNav.classList.add("is-visible");
-		body.style = "overflow: hidden;";
 	}
 
 	mobileNavIsVisible = !mobileNavIsVisible;

@@ -332,8 +332,9 @@ a:visited {
 }
 
 .c-mobile-nav {
-	display: none;
-	position: absolute;
+	display: flex;
+	position: fixed;
+	transform: translateX(100vw);
 	width: 100vw;
 	height: 100vh;
 	top: 0;
@@ -343,12 +344,11 @@ a:visited {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	transition: 200ms ease-out;
 }
 
 .c-mobile-nav.is-visible {
-	display: flex;
-	-webkit-animation: fly-in 0.2s;
-	animation: fly-in 0.2s;
+	transform: translateX(0vw);
 }
 
 .c-mobile-nav__item {
