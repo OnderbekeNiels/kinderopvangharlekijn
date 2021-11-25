@@ -248,6 +248,10 @@ a:visited {
 	/* transform: translateX(-1.25rem); */
 }
 
+.c-timeline-item-right{
+	transform: translateX(calc(100% + 3.5rem));
+}
+
 .c-timeline-item.c-timeline-item-left::after{
 	content: '';
 	width: 1rem;
@@ -277,7 +281,7 @@ a:visited {
 }
 
 .c-timeline-item + .c-timeline-item{
-	margin-top: var(--global-whitespace-lg);
+	margin-top: -2rem;
 }
 
 .c-timeline-icon{
