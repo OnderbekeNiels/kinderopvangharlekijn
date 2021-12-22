@@ -28,13 +28,26 @@
     <script defer src="script/app.js"></script>
   </head>
   <body>
+    <button class="c-back-to-top js-back-to-top o-button-reset">
+      <svg
+      class="c-back-to-top__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewbox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="16 12 12 8 8 12"></polyline>
+        <line x1="12" y1="16" x2="12" y2="8"></line>
+      </svg>
+    </button>
     <section
-      class="
-        o-section
-        u-background-color--alpha
-        u-box-shadow
-        u-relative
-      "
+      class="o-section u-background-color--alpha u-box-shadow u-relative"
     >
       <header class="c-header o-row">
         <div class="c-header-logo">
@@ -245,7 +258,7 @@
         </div>
         <ul class="c-header-nav">
           <li>
-            <a href="#visie" class="o-button-reset c-header-nav__item">Visie</a>
+            <a href="#visie" class="c-header-nav__item">Visie</a>
           </li>
           <li>
             <a href="#dagverloop" class="o-button-reset c-header-nav__item"
@@ -253,19 +266,13 @@
             >
           </li>
           <li>
-            <a href="#onsteam" class="o-button-reset c-header-nav__item"
-              >Ons team</a
-            >
+            <a href="#onsteam" class="c-header-nav__item">Ons team</a>
           </li>
           <li>
-            <a href="#omgeving" class="o-button-reset c-header-nav__item"
-              >Omgeving</a
-            >
+            <a href="#omgeving" class="c-header-nav__item">Omgeving</a>
           </li>
           <li>
-            <a href="#contact" class="o-button-reset c-header-nav__item"
-              >Contact</a
-            >
+            <a href="#contact" class="c-header-nav__item">Contact</a>
           </li>
         </ul>
         <aside class="c-mobile-nav js-mobile-nav">
@@ -283,7 +290,7 @@
             />
           </svg>
           <ul>
-            <li class="c-mobile-nav__item">
+            <li class="c-mobile-nav__item" tabindex="1">
               <a href="#visie" class="c-mobile-nav__link">Visie</a>
             </li>
             <li class="c-mobile-nav__item">
@@ -356,7 +363,7 @@
           </div>
         </article>
       </div>
-             <div class="c-wave-bottom c-wave-bottom--blue-500">
+      <div class="c-wave-bottom c-wave-bottom--blue-500">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -779,7 +786,7 @@
           </div>
         </div>
       </div>
-            <div class="c-wave-bottom">
+      <div class="c-wave-bottom">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -1019,7 +1026,7 @@
         u-relative
       "
     >
-          <div class="c-wave-top c-wave-top--blue-500">
+      <div class="c-wave-top c-wave-top--blue-500">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
