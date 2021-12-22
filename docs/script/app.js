@@ -27,8 +27,10 @@ const listenToMobileMenu = () => {
 const handleMenuChange = () => {
   if (mobileNavIsVisible) {
     mobileNav.classList.remove("is-visible");
+	  backToTopBtn.style.display = "grid";
   } else {
     mobileNav.classList.add("is-visible");
+	  backToTopBtn.style.display = "none";
   }
 
   mobileNavIsVisible = !mobileNavIsVisible;
@@ -55,6 +57,7 @@ const listenToBackToTop = () => {
 };
 
 const scrollFunction = () => {
+	 if (!mobileNavIsVisible) {
 	  if (
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
@@ -62,7 +65,7 @@ const scrollFunction = () => {
       backToTopBtn.style.display = "grid";
     } else {
       backToTopBtn.style.display = "none";
-    }
+    }}
 }
 
 document.addEventListener("DOMContentLoaded", function () {
