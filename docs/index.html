@@ -1,892 +1,1013 @@
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Kinderopvang Harlekijn | Sint-Martens-Latem</title>
-      <link
-         rel="stylesheet"
-         href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-         crossorigin=""
-         />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-         rel="stylesheet"
-         />
-      <link rel="stylesheet" href="style/reset.css" />
-      <link rel="stylesheet" href="style/screen.css" />
-      <script
-         src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-         crossorigin=""
-         defer
-         ></script>
-      <script defer src="script/app.js"></script>
-   </head>
-   <body>
-      <section
-         class="o-section  u-background-color--alpha u-border-radius__bottom--lg u-box-shadow"
-         >
-         <header class="c-header o-row">
-            <div class="c-header-logo">
-               <svg
-                  class="c-header-logo__svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 270.82 293.92"
-                  >
-                  <g>
-                     <path
-                        d="M99.64,18.38h-12v7h-10c3.73,8.41,0,14.17-4,20-6.37,1.69-14,4.93-16,4,.58-6.58-6.52-9.67-5-17,3-11.07,9.54-8.38,20-12-5.85-3.07-8.58-9.49-13-14h-1c-5.9,20.14-30.11,29.53-55,24l-1-2c5.77-5.41,2.09-18.52,0-23l1-2c22.77,1,94.57-7.66,106,1-2.57,3.93-6.39,6.21-10,9Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M170.64,2.38c21.09,1.11,82.34-5.08,98,4,0,10.24-2.81,12.61-7,18-24.66,3.55-35.66.37-51-14h-2c-6.78,12.55-24.47,24.56-40,22l-2-16,10-6-1-3c-7.2-.94-16.9,1.39-22-3v-1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M145.64,80.38l1,14h-1c-3.48-1.91-7.07-4.15-12-2h2c11.43,8.86,30.76,8.94,47,8l-3-4-8-5c-1.34,1.43-1.25,1.76-3,3a203.48,203.48,0,0,0-2-39h-1l-5,19h-2v-3c4.54-10.07,11.08-48.35-3-55v7l-3-7c-23.23-.06-37.33,9.72-57,14l-5-6,1-4h5c-.22,3.33-.94,2.3,1,5l4-2c6.39-25.09,34.81-17.84,54-12l17-2-3,4-9,3c11.47,20.72,6.55,56.82,16,76,29.74,12.09,35.93,41.53,29,75l-3,22c8.62,18.19,16.3,45.24,20,68l-2-1q-11-36-22-72c6.56-15.24,8.69-53.69,2-66h-11c-4,6.36-12.89,13.78-20,11l-5-11c-5.23,4-11.32,9.5-19,8l-4-10-17,4v-2l-2-18c-34.41-.62-35.31,15.27-55,27l3-4c10.33-22.31,38.36-34.62,71-35l-2-11c-15.75-2.17-28-18.71-34-31l1-3,4,6,7-2,8,5c.23,7.2-2.62,9-3,14,10.25,4.52,17,8.15,31,12v1l-1,1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M202.64,20.38l6,1c1.63,6,4.77,9.18,3,16l4-1c-6.14,13.39,17.75,60.28,20,82h4c-1.29,4.67.47,5.53,0,12,4.17.76,3.77-1.17,3,3l3,10c2-3.73-.43-1.63,4-3-.14,8.55,21.55,44.79,13,50l-1,2h-3c-23.21-36.83-40.19-70.13-56-117-3.09-9.15-15.47-36.55-9-46C196,25.6,199.89,23.88,202.64,20.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M52.64,22.38c2,13.38-9.39,16.25,3,28l-1,2-14,5,6-2v-2h-4c-31.63,27.63-7.37,67.79-39,88l-2-5c6.82-24.8,21.5-55.19,31-82,3.82-10.79,1.9-18.21,6-25C45,27.72,48.8,26.05,52.64,22.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M145.64,22.38c4.73-.06,6.66.13,9,2l-1,2c-12.22.12-18.11,4.41-26,8l5-7Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M68.64,25.38v2c-2.86.72-1.59-.38-4,3l4,2-6,6,3,1,5-4,1-4c.81,4.95-.67,3,3,5l1-2c-1.68-4.75-1.74-5.44-3-9Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M267.64,25.38c2.49,5.43,3.05,58.51,1,64-12.27-8.9-17.17-37.28-19-56l3-1c4.34-2.12,10.75-4.94,13-5l1,4h1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M266.64,130.38l-8-1c-14.6-30.39-30.16-61.71-37-101l2-1,16,10c0,10.69,10.32,19.36,8,31l4-1C247.61,89.27,266.23,102.71,266.64,130.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M84.64,29.38c7,.21,8.38,1.79,13,4-1.48,13.09-9.13,21.22-13,32-7.34-.76-12.07-1.23-19,1,3.75-6,3.92-9.16,1-16C78,47.77,80.66,39.44,84.64,29.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M114.64,29.38l10,1-1,3-20,3v-1l1-2Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M144.64,29.38l10,1v1l-2,1c-4.45,4.15-11,5-18,4v-1l2-3Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M62.64,32.38l-1,2,1,1,2-1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path d="M266.64,32.38l1,7Z" style="stroke-miterlimit: 10" />
-                     <path
-                        d="M26.64,34.38c9.32,7-17.28,62.22-21,71h-2c1.33-12.72-2-24.84-2-30l6-6v-1l-2-1-3,3-1-3c2.42-4.74,1.17-31.45,11-30Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M116.64,34.38h5l-1,5c-6.68,1.62-7,2.77-13,2l2-3Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M131.64,38.38c4.78,5.36,7.59,15.63,9,24h3l-2-6c4.77,1.51,4.09,1.94,6,6l-3,2c-5.28,3.73-9.5,2.07-13,1l-1-2c2.9-6.08.52-15.06-3-23l1-1,2,1,7,25,2-2Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M160.64,38.38c.22,8,.4,11.26-1,18l-2,1c-6.33-2.46-8.32-3.83-11-10,2.43-4.31,4.92-6.4,9-9Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M62.64,39.38c1.33,4.91,1,4,6,5,1.45-3.33,2-2.7,4-5-5.49.67-5.24,2.28-7,1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M61.64,52.38c-.71.91-.16,2.49-4,1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M61.64,56.38l5,1h-2l-14,1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path d="M47.64,59.38h2l-4,3Z" style="stroke-miterlimit: 10" />
-                     <path
-                        d="M57.64,60.38l9,1-21,4C48.76,62.53,53.44,62.37,57.64,60.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M34.64,63.38c1,2.65-.76,4.84-3,7Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M55.64,65.38l5,1v1l-13,3c1.6-2.7.34-1.38,3-3Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M41.64,66.38c3.44,5.06.71,11,4,13,1.18-6.73,6.35-8.39,12-10l1,8c4.86-6.24,6.43-10,18-10l2,1-5,5c-3.08,5.87-8.86,6.65-15,7l1,10-5-6v-5h-4v1l3,3c-3,4.88-6.46,6.68-14,7l1-2,10-3-1-2-5-3h-2c-3.12,5.17-6,9.54-12,12A63.64,63.64,0,0,0,41.64,66.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M155.64,66.38l3,2c-5.29,5.85-8.12,9.7-18,6v-4Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M70.64,68.38c-4,3-6.41,4.5-9,9v1h4l8-10Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path d="M30.64,70.38l1,2Z" style="stroke-miterlimit: 10" />
-                     <path d="M29.64,72.38l1,2Z" style="stroke-miterlimit: 10" />
-                     <path
-                        d="M28.64,74.38c1.82,2.74-1.55,10.06-4,12Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M71.64,77.38l4,2c-5,8.92-12.55,25.9-25,27l-10-10v-1c9.55-3.18,11-7.76,18-1l2-1c1.71-4.52,2-7.29,3-12Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path d="M24.64,89.38v0Z" style="stroke-miterlimit: 10" />
-                     <path
-                        d="M119.64,92.38l-11,4,1,2,16,1,1,18h1l17-4c.41,5.93,1.76,7.38,4,11,6.63-2.41,11.5-4.64,16-9l3,2,6,10c9.78-5.21,11.6-11.48,25-11v-1l-12-14C158.92,109.25,146.75,92.84,119.64,92.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M23.64,94.38h2C23.89,95.36,25.42,95.29,23.64,94.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M34.64,97.38c13.24,4.68,24.45,20.22,32,31l-3-2C53.6,121.41,42.08,105.72,34.64,97.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M27.64,103.38l14,24,20,22C48.29,144.38,29.82,119.15,27.64,103.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M109.64,117.38c3.21,2.09-.69,42.06-1,44h-3v-31c-11,7.59-23.48,16.06-39,19l-2-2C82.36,145.17,104,132.55,109.64,117.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M27.64,124.38c4.69,1.61,6.71,4,9,8l-31,45c18.39,7.63,42.39,41.77,48,62,2.66,9.6-9.78,18.14-5,30v-2c17.16-30.77,22.83-88.22,56-102-10.67,20.06-28.35,37.21-39,59-9.72,19.9-9.86,43.37-19,65h-1l2-18-1,2-6,19h-6c13-27.25-27.31-89.65-30-115-4,.39-.63,2.15-4,0,5-10.86,9-23.5,16-39Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M188.64,138.38s-8.62,31.42-7,45c3.09,26,20.41,79.52,38,88,6.71,3,17.9.57,24,2l-3-3,8-1v1l-2,3-14,3v1h7c-2.46,4.9-5.31,15-11,14l-13,1c-.75-5.66-.28-8.77,1-14l15-2v-1c-36.67-1.71-52.4-74.3-52-119l-21,20,16,29c12.42,24.53,17.74,54.05,28,82l-2,3-2-1c-5.53-26.4-29.83-102.09-45-114l-30-11c12.46,1,27.56,10.78,35,8Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M264.64,193.38h3c-3,8.68-15.82,31.36-20,33v1l4-1c-5.51,7.67-11.76,21.4-11,30-7.07-.53-9.51.62-16,2v-2C216,234.43,255.18,204.07,264.64,193.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M.64,211.38c10.7,8.92,30.59,61.34,24,81l-14,1v-1C14.53,276.59.9,241.38.64,211.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M268.64,218.38c4,13.2-2.56,32.78,1,46l-18-10C256,238.46,260.38,229.38,268.64,218.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M117.64,227.38l14,37,15,25-2,1-2-1-20-43-2,1c-3.33,14.22-15.49,36.08-26,44C103.92,268.46,121.61,256.37,117.64,227.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M241.64,258.38l11,2v1l-23-1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path d="M226.64,261.38h0Z" style="stroke-miterlimit: 10" />
-                     <path d="M224.64,262.38h0Z" style="stroke-miterlimit: 10" />
-                     <path
-                        d="M254.64,263.38a18.72,18.72,0,0,1,14,8Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M252.64,267.38c7.8.66,14.2,4.3,17,10Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M250.64,271.38l7,2v1C253.2,273.81,253,273.62,250.64,271.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M246.64,275.38a20.19,20.19,0,0,1,13,11Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M259.64,275.38c4.62,1.45,7,2.91,9,7Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M268.64,293.38c-7.78-.12-21.21-.25-27-3,.13-4.37.41-5.66,2-8v-2l14,10,8-5,3,1Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                     <path
-                        d="M227.64,282.38l-1,3C228.73,283.1,227.8,285,227.64,282.38Z"
-                        style="stroke-miterlimit: 10"
-                        />
-                  </g>
-               </svg>
-               <p class="c-header-logo__text">Kinderopvang<br />Harlekijn</p>
-            </div>
-            <ul class="c-header-nav">
-               <li>
-                  <a href="#visie" class="o-button-reset c-header-nav__item">Visie</a>
-               </li>
-               <li>
-                  <a href="#dagverloop" class="o-button-reset c-header-nav__item"
-                     >Dagverloop</a
-                     >
-               </li>
-               <li>
-                  <a href="#onsteam" class="o-button-reset c-header-nav__item"
-                     >Ons team</a
-                     >
-               </li>
-               <li>
-                  <a href="#omgeving" class="o-button-reset c-header-nav__item"
-                     >Omgeving</a
-                     >
-               </li>
-               <li>
-                  <a href="#contact" class="o-button-reset c-header-nav__item"
-                     >Contact</a
-                     >
-               </li>
-            </ul>
-            <aside class="c-mobile-nav js-mobile-nav">
-               <svg
-                  class="c-mobile-nav__close js-mobile-nav__close"
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 0 24 24"
-                  width="24px"
-                  fill="#000000"
-                  >
-                  <path d="M0 0h24v24H0V0z" fill="none" />
-                  <path
-                     d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
-                     />
-               </svg>
-               <ul>
-                  <li class="c-mobile-nav__item">
-                     <a href="#visie" class="c-mobile-nav__link">Visie</a>
-                  </li>
-                  <li class="c-mobile-nav__item">
-                     <a href="#dagverloop" class=" c-mobile-nav__link">Dagverloop</a>
-                  </li>
-                  <li class="c-mobile-nav__item">
-                     <a href="#onsteam" class="c-mobile-nav__link">Ons team</a>
-                  </li>
-                  <li class="c-mobile-nav__item">
-                     <a href="#omgeving" class=" c-mobile-nav__link">Omgeving</a>
-                  </li>
-                  <li class="c-mobile-nav__item">
-                     <a href="#contact" class=" c-mobile-nav__link">Contact</a>
-                  </li>
-               </ul>
-            </aside>
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinderopvang Harlekijn | Sint-Martens-Latem</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+      defer
+    ></script>
+    <script defer src="script/app.js"></script>
+  </head>
+  <body>
+    <section
+      class="
+        o-section
+        u-background-color--alpha
+        u-border-radius__bottom--lg
+        u-box-shadow u-h-screen
+      "
+    >
+      <header class="c-header o-row">
+        <div class="c-header-logo">
+          <svg
+            class="c-header-logo__svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 270.82 293.92"
+          >
+            <g>
+              <path
+                d="M99.64,18.38h-12v7h-10c3.73,8.41,0,14.17-4,20-6.37,1.69-14,4.93-16,4,.58-6.58-6.52-9.67-5-17,3-11.07,9.54-8.38,20-12-5.85-3.07-8.58-9.49-13-14h-1c-5.9,20.14-30.11,29.53-55,24l-1-2c5.77-5.41,2.09-18.52,0-23l1-2c22.77,1,94.57-7.66,106,1-2.57,3.93-6.39,6.21-10,9Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M170.64,2.38c21.09,1.11,82.34-5.08,98,4,0,10.24-2.81,12.61-7,18-24.66,3.55-35.66.37-51-14h-2c-6.78,12.55-24.47,24.56-40,22l-2-16,10-6-1-3c-7.2-.94-16.9,1.39-22-3v-1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M145.64,80.38l1,14h-1c-3.48-1.91-7.07-4.15-12-2h2c11.43,8.86,30.76,8.94,47,8l-3-4-8-5c-1.34,1.43-1.25,1.76-3,3a203.48,203.48,0,0,0-2-39h-1l-5,19h-2v-3c4.54-10.07,11.08-48.35-3-55v7l-3-7c-23.23-.06-37.33,9.72-57,14l-5-6,1-4h5c-.22,3.33-.94,2.3,1,5l4-2c6.39-25.09,34.81-17.84,54-12l17-2-3,4-9,3c11.47,20.72,6.55,56.82,16,76,29.74,12.09,35.93,41.53,29,75l-3,22c8.62,18.19,16.3,45.24,20,68l-2-1q-11-36-22-72c6.56-15.24,8.69-53.69,2-66h-11c-4,6.36-12.89,13.78-20,11l-5-11c-5.23,4-11.32,9.5-19,8l-4-10-17,4v-2l-2-18c-34.41-.62-35.31,15.27-55,27l3-4c10.33-22.31,38.36-34.62,71-35l-2-11c-15.75-2.17-28-18.71-34-31l1-3,4,6,7-2,8,5c.23,7.2-2.62,9-3,14,10.25,4.52,17,8.15,31,12v1l-1,1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M202.64,20.38l6,1c1.63,6,4.77,9.18,3,16l4-1c-6.14,13.39,17.75,60.28,20,82h4c-1.29,4.67.47,5.53,0,12,4.17.76,3.77-1.17,3,3l3,10c2-3.73-.43-1.63,4-3-.14,8.55,21.55,44.79,13,50l-1,2h-3c-23.21-36.83-40.19-70.13-56-117-3.09-9.15-15.47-36.55-9-46C196,25.6,199.89,23.88,202.64,20.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M52.64,22.38c2,13.38-9.39,16.25,3,28l-1,2-14,5,6-2v-2h-4c-31.63,27.63-7.37,67.79-39,88l-2-5c6.82-24.8,21.5-55.19,31-82,3.82-10.79,1.9-18.21,6-25C45,27.72,48.8,26.05,52.64,22.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M145.64,22.38c4.73-.06,6.66.13,9,2l-1,2c-12.22.12-18.11,4.41-26,8l5-7Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M68.64,25.38v2c-2.86.72-1.59-.38-4,3l4,2-6,6,3,1,5-4,1-4c.81,4.95-.67,3,3,5l1-2c-1.68-4.75-1.74-5.44-3-9Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M267.64,25.38c2.49,5.43,3.05,58.51,1,64-12.27-8.9-17.17-37.28-19-56l3-1c4.34-2.12,10.75-4.94,13-5l1,4h1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M266.64,130.38l-8-1c-14.6-30.39-30.16-61.71-37-101l2-1,16,10c0,10.69,10.32,19.36,8,31l4-1C247.61,89.27,266.23,102.71,266.64,130.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M84.64,29.38c7,.21,8.38,1.79,13,4-1.48,13.09-9.13,21.22-13,32-7.34-.76-12.07-1.23-19,1,3.75-6,3.92-9.16,1-16C78,47.77,80.66,39.44,84.64,29.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M114.64,29.38l10,1-1,3-20,3v-1l1-2Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M144.64,29.38l10,1v1l-2,1c-4.45,4.15-11,5-18,4v-1l2-3Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M62.64,32.38l-1,2,1,1,2-1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path d="M266.64,32.38l1,7Z" style="stroke-miterlimit: 10" />
+              <path
+                d="M26.64,34.38c9.32,7-17.28,62.22-21,71h-2c1.33-12.72-2-24.84-2-30l6-6v-1l-2-1-3,3-1-3c2.42-4.74,1.17-31.45,11-30Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M116.64,34.38h5l-1,5c-6.68,1.62-7,2.77-13,2l2-3Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M131.64,38.38c4.78,5.36,7.59,15.63,9,24h3l-2-6c4.77,1.51,4.09,1.94,6,6l-3,2c-5.28,3.73-9.5,2.07-13,1l-1-2c2.9-6.08.52-15.06-3-23l1-1,2,1,7,25,2-2Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M160.64,38.38c.22,8,.4,11.26-1,18l-2,1c-6.33-2.46-8.32-3.83-11-10,2.43-4.31,4.92-6.4,9-9Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M62.64,39.38c1.33,4.91,1,4,6,5,1.45-3.33,2-2.7,4-5-5.49.67-5.24,2.28-7,1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M61.64,52.38c-.71.91-.16,2.49-4,1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M61.64,56.38l5,1h-2l-14,1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path d="M47.64,59.38h2l-4,3Z" style="stroke-miterlimit: 10" />
+              <path
+                d="M57.64,60.38l9,1-21,4C48.76,62.53,53.44,62.37,57.64,60.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M34.64,63.38c1,2.65-.76,4.84-3,7Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M55.64,65.38l5,1v1l-13,3c1.6-2.7.34-1.38,3-3Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M41.64,66.38c3.44,5.06.71,11,4,13,1.18-6.73,6.35-8.39,12-10l1,8c4.86-6.24,6.43-10,18-10l2,1-5,5c-3.08,5.87-8.86,6.65-15,7l1,10-5-6v-5h-4v1l3,3c-3,4.88-6.46,6.68-14,7l1-2,10-3-1-2-5-3h-2c-3.12,5.17-6,9.54-12,12A63.64,63.64,0,0,0,41.64,66.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M155.64,66.38l3,2c-5.29,5.85-8.12,9.7-18,6v-4Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M70.64,68.38c-4,3-6.41,4.5-9,9v1h4l8-10Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path d="M30.64,70.38l1,2Z" style="stroke-miterlimit: 10" />
+              <path d="M29.64,72.38l1,2Z" style="stroke-miterlimit: 10" />
+              <path
+                d="M28.64,74.38c1.82,2.74-1.55,10.06-4,12Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M71.64,77.38l4,2c-5,8.92-12.55,25.9-25,27l-10-10v-1c9.55-3.18,11-7.76,18-1l2-1c1.71-4.52,2-7.29,3-12Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path d="M24.64,89.38v0Z" style="stroke-miterlimit: 10" />
+              <path
+                d="M119.64,92.38l-11,4,1,2,16,1,1,18h1l17-4c.41,5.93,1.76,7.38,4,11,6.63-2.41,11.5-4.64,16-9l3,2,6,10c9.78-5.21,11.6-11.48,25-11v-1l-12-14C158.92,109.25,146.75,92.84,119.64,92.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M23.64,94.38h2C23.89,95.36,25.42,95.29,23.64,94.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M34.64,97.38c13.24,4.68,24.45,20.22,32,31l-3-2C53.6,121.41,42.08,105.72,34.64,97.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M27.64,103.38l14,24,20,22C48.29,144.38,29.82,119.15,27.64,103.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M109.64,117.38c3.21,2.09-.69,42.06-1,44h-3v-31c-11,7.59-23.48,16.06-39,19l-2-2C82.36,145.17,104,132.55,109.64,117.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M27.64,124.38c4.69,1.61,6.71,4,9,8l-31,45c18.39,7.63,42.39,41.77,48,62,2.66,9.6-9.78,18.14-5,30v-2c17.16-30.77,22.83-88.22,56-102-10.67,20.06-28.35,37.21-39,59-9.72,19.9-9.86,43.37-19,65h-1l2-18-1,2-6,19h-6c13-27.25-27.31-89.65-30-115-4,.39-.63,2.15-4,0,5-10.86,9-23.5,16-39Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M188.64,138.38s-8.62,31.42-7,45c3.09,26,20.41,79.52,38,88,6.71,3,17.9.57,24,2l-3-3,8-1v1l-2,3-14,3v1h7c-2.46,4.9-5.31,15-11,14l-13,1c-.75-5.66-.28-8.77,1-14l15-2v-1c-36.67-1.71-52.4-74.3-52-119l-21,20,16,29c12.42,24.53,17.74,54.05,28,82l-2,3-2-1c-5.53-26.4-29.83-102.09-45-114l-30-11c12.46,1,27.56,10.78,35,8Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M264.64,193.38h3c-3,8.68-15.82,31.36-20,33v1l4-1c-5.51,7.67-11.76,21.4-11,30-7.07-.53-9.51.62-16,2v-2C216,234.43,255.18,204.07,264.64,193.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M.64,211.38c10.7,8.92,30.59,61.34,24,81l-14,1v-1C14.53,276.59.9,241.38.64,211.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M268.64,218.38c4,13.2-2.56,32.78,1,46l-18-10C256,238.46,260.38,229.38,268.64,218.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M117.64,227.38l14,37,15,25-2,1-2-1-20-43-2,1c-3.33,14.22-15.49,36.08-26,44C103.92,268.46,121.61,256.37,117.64,227.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M241.64,258.38l11,2v1l-23-1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path d="M226.64,261.38h0Z" style="stroke-miterlimit: 10" />
+              <path d="M224.64,262.38h0Z" style="stroke-miterlimit: 10" />
+              <path
+                d="M254.64,263.38a18.72,18.72,0,0,1,14,8Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M252.64,267.38c7.8.66,14.2,4.3,17,10Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M250.64,271.38l7,2v1C253.2,273.81,253,273.62,250.64,271.38Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M246.64,275.38a20.19,20.19,0,0,1,13,11Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M259.64,275.38c4.62,1.45,7,2.91,9,7Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M268.64,293.38c-7.78-.12-21.21-.25-27-3,.13-4.37.41-5.66,2-8v-2l14,10,8-5,3,1Z"
+                style="stroke-miterlimit: 10"
+              />
+              <path
+                d="M227.64,282.38l-1,3C228.73,283.1,227.8,285,227.64,282.38Z"
+                style="stroke-miterlimit: 10"
+              />
+            </g>
+          </svg>
+          <p class="c-header-logo__text">Kinderopvang<br />Harlekijn</p>
+        </div>
+        <ul class="c-header-nav">
+          <li>
+            <a href="#visie" class="o-button-reset c-header-nav__item">Visie</a>
+          </li>
+          <li>
+            <a href="#dagverloop" class="o-button-reset c-header-nav__item"
+              >Dagverloop</a
+            >
+          </li>
+          <li>
+            <a href="#onsteam" class="o-button-reset c-header-nav__item"
+              >Ons team</a
+            >
+          </li>
+          <li>
+            <a href="#omgeving" class="o-button-reset c-header-nav__item"
+              >Omgeving</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="o-button-reset c-header-nav__item"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <aside class="c-mobile-nav js-mobile-nav">
+          <svg
+            class="c-mobile-nav__close js-mobile-nav__close"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#000000"
+          >
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
+            />
+          </svg>
+          <ul>
+            <li class="c-mobile-nav__item">
+              <a href="#visie" class="c-mobile-nav__link">Visie</a>
+            </li>
+            <li class="c-mobile-nav__item">
+              <a href="#dagverloop" class="c-mobile-nav__link">Dagverloop</a>
+            </li>
+            <li class="c-mobile-nav__item">
+              <a href="#onsteam" class="c-mobile-nav__link">Ons team</a>
+            </li>
+            <li class="c-mobile-nav__item">
+              <a href="#omgeving" class="c-mobile-nav__link">Omgeving</a>
+            </li>
+            <li class="c-mobile-nav__item">
+              <a href="#contact" class="c-mobile-nav__link">Contact</a>
+            </li>
+          </ul>
+        </aside>
+        <svg
+          class="c-header-menu js-menu-btn"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0,0H24V24H0Z" fill="none" />
+          <path
+            d="M4,18H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2Zm0-5H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2ZM3,7A1,1,0,0,0,4,8H20a1,1,0,0,0,0-2H4A1,1,0,0,0,3,7Z"
+            fill="#fff"
+            data-name="Path 68"
+          />
+        </svg>
+      </header>
+      <div class="c-content-container c-intro o-row o-layout">
+        <article
+          class="
+            c-intro-info
+            o-layout__item
+            u-align-items--center
+            o-layout__item-1-of-2
+          "
+        >
+          <div>
+            <h1 class="c-intro-info__title">Uw kind,<br />Onze zorg.</h1>
+            <p class="c-intro-info__sub">
+              Wij bieden opvang voor uw kinderen van 0 tot 3 jaar, regio
+              Sint-Martens-Latem.
+            </p>
+          </div>
+        </article>
+        <article class="c-intro-visual o-layout__item o-layout__item-1-of-2">
+          <div class="c-intro-visual__holder">
             <svg
-               class="c-header-menu js-menu-btn"
-               viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg"
-               >
-               <path d="M0,0H24V24H0Z" fill="none" />
-               <path
-                  d="M4,18H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2Zm0-5H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2ZM3,7A1,1,0,0,0,4,8H20a1,1,0,0,0,0-2H4A1,1,0,0,0,3,7Z"
-                  fill="#fff"
-                  data-name="Path 68"
-                  />
+              class="c-intro-visual__blob"
+              viewBox="0 0 607 451.34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                transform="translate(62.129 46.082)"
+                d="M57.519-41.265C-3.841-24.1-55.585,43.1-61.538,114.217c-5.953,70.629,33.885,145.182,81.05,197.173,47.623,51.991,103.03,81.91,156.148,90.739s104.4-2.943,168.969-11.771S487.5,375.152,522.3,331.5c35.259-43.162,26.559-123.6-7.784-176.082-34.8-52.481-95.246-77.005-141.953-97.115S293.344,22.5,241.6-1.536C189.4-26.06,118.88-58.432,57.519-41.265Z"
+              />
             </svg>
-         </header>
-         <div class="c-content-container c-intro o-row o-layout">
-            <article
-               class="c-intro-info o-layout__item u-align-items--center  o-layout__item-1-of-2"
-               >
-               <div>
-                  <h1 class="c-intro-info__title">Uw kind,<br />Onze zorg.</h1>
-                  <p class="c-intro-info__sub">
-                     Wij bieden opvang voor uw kinderen van 0 tot 3 jaar, regio
-                     Sint-Martens-Latem.
-                  </p>
-               </div>
-            </article>
-            <article class="c-intro-visual o-layout__item o-layout__item-1-of-2">
-               <div class="c-intro-visual__holder">
-                  <svg
-                     class="c-intro-visual__blob"
-                     viewBox="0 0 607 451.34"
-                     xmlns="http://www.w3.org/2000/svg"
-                     >
-                     <path
-                        transform="translate(62.129 46.082)"
-                        d="M57.519-41.265C-3.841-24.1-55.585,43.1-61.538,114.217c-5.953,70.629,33.885,145.182,81.05,197.173,47.623,51.991,103.03,81.91,156.148,90.739s104.4-2.943,168.969-11.771S487.5,375.152,522.3,331.5c35.259-43.162,26.559-123.6-7.784-176.082-34.8-52.481-95.246-77.005-141.953-97.115S293.344,22.5,241.6-1.536C189.4-26.06,118.88-58.432,57.519-41.265Z"
-                        />
-                  </svg>
-                  <img
-                     class="c-intro-visual__img"
-                     sizes="(max-width: 480px) 100vw, 480px"
-                     srcset="
-                     ./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_300.jpg 300w,
-                     ./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_470.jpg 470w,
-                     ./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_480.jpg 480w"
-                     src="./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_480.jpg"
-                     alt="Foto van het gebouw waar Kinderopvang Harlekijn zich bevindt."
-                     />
-               </div>
-            </article>
-         </div>
-      </section>
-      <section id="visie" class="o-section">
-         <div class="o-row o-layout u-align-items--center u-flex--row-reverse">
-            <article class="o-layout__item o-layout__item-1-of-2 ">
-               <div>
-                  <h2 class="u-color-accent-1">Visie</h2>
-                  <div class="c-description u-max-width--md">
-                     <p class="u-mb--sm">
-                        We zorgen voor een Huislijke, warme omgeving met Aandacht voor elk Individueel kind.
-                     </p>
-                     <p>Wij bouwen graag een Eerlijke Relatie op met de ouders en vinden hun Inspraak belangrijk. We willen een Leerrijke, Kwaliteitsvolle sfeer bieden met een Jeugdige kijk op een Natuurlijke ontwikkeling van elk kind.</p>
-                     </p>
-                  </div>
-               </div>
-            </article>
-            <svg
-               class="o-layout__item o-layout__item-1-of-2 c-info__visual"
-               viewBox="0 0 458.64 436" xmlns="http://www.w3.org/2000/svg">
-               <defs>
-                  <filter id="a" x="0" y="417" width="458.64" height="19" filterUnits="userSpaceOnUse">
-                     <feOffset dy="3" input="SourceAlpha"/>
-                     <feGaussianBlur result="blur" stdDeviation="3"/>
-                     <feFlood flood-opacity=".161"/>
-                     <feComposite in2="blur" operator="in"/>
-                     <feComposite in="SourceGraphic"/>
-                  </filter>
-               </defs>
-               <g transform="translate(9)" data-name="visie visual">
-                  <path transform="translate(-342.67 -241.55)" d="m537.74 460.48 16.431 28.458 16.426 28.461h-65.717l16.43-28.458z" fill="#33ade6" data-name="Path 421"/>
-                  <rect transform="translate(30.794 162.42)" width="68.906" height="68.906" fill="#62abd9" data-name="Rectangle 48"/>
-                  <circle transform="translate(106.4 28.536)" cx="44" cy="44" r="44" fill="#135580" data-name="Ellipse 68"/>
-                  <path transform="translate(-360.95 -193.08)" d="m551.91 340.69a7.318 7.318 0 1 1 7.318 7.317 7.318 7.318 0 0 1-7.318-7.317zm1.22 0a6.1 6.1 0 1 0 6.1-6.1 6.1 6.1 0 0 0-6.1 6.1z" fill="#ccc" data-name="Path 422"/>
-                  <path transform="translate(-314.53 -263.64)" d="m441.7 539.83-10.771-11.548 11.551-10.772 10.771 11.548zm-9.054-11.488 9.114 9.771 9.774-9.113-9.114-9.771z" fill="#ccc" data-name="Path 423"/>
-                  <path transform="translate(-260.18 -162.99)" d="m297.1 273.08-8.766-9.4 9.4-8.765 8.766 9.4zm-7.369-9.35 7.421 7.955 7.953-7.418-7.418-7.953z" fill="#ccc" data-name="Path 424"/>
-                  <path transform="translate(-304.1 -105.82)" d="m465.64 227.78a60.979 60.979 0 1 1 60.979-60.977 60.979 60.979 0 0 1-60.979 60.979zm0-120.74a59.759 59.759 0 1 0 59.761 59.761 59.759 59.759 0 0 0-59.759-59.759z" fill="#2b2b2b" data-name="Path 425"/>
-                  <rect transform="matrix(.433 -.901 .901 .433 107.96 142.46)" width="36.372" height="1.22" fill="#2b2b2b" data-name="Rectangle 50"/>
-                  <rect transform="translate(119.81 188.08) rotate(-61.578)" width="1.22" height="78.896" fill="#2b2b2b" data-name="Rectangle 51"/>
-                  <path transform="translate(-261.48 -194.06)" d="m380.69 425.85h-89.029v-89.029h89.029zm-87.81-1.22h86.59v-86.59h-86.589z" fill="#2b2b2b" data-name="Path 426"/>
-                  <path transform="translate(-341.85 -227.44)" d="m595.24 503.78h-92.09l46.049-79.752zm-89.978-1.22h87.865l-43.928-76.093z" fill="#2b2b2b" data-name="Path 427"/>
-                  <g transform="translate(-9)" filter="url(#a)">
-                     <rect transform="translate(9 423)" width="440.64" height="1" fill="#2b2b2b" data-name="Rectangle 53"/>
-                  </g>
-                  <path transform="translate(-283.38 -255.2)" d="M353.492,678.865c-.161-.263-3.954-6.6-5.269-19.75-1.206-12.067-.431-32.407,10.118-60.779,19.984-53.749-4.605-97.118-4.856-97.549l1.213-.7c.061.11,6.409,11.167,10.157,28.774a125.529,125.529,0,0,1-5.2,69.969c-19.95,53.658-5.118,79.059-4.966,79.309Z" fill="#2b2b2b" data-name="Path 481"/>
-                  <circle transform="translate(82.836 256.21)" cx="9.113" cy="9.113" r="9.113" fill="#33ade6" data-name="Ellipse 75"/>
-                  <circle transform="translate(55.287 327.8)" cx="9.113" cy="9.113" r="9.113" fill="#33ade6" data-name="Ellipse 78"/>
-                  <path transform="translate(-296.52 -294.63)" d="m383.91 605.5a7.318 7.318 0 1 1 7.318 7.317 7.317 7.317 0 0 1-7.318-7.317zm1.22 0a6.1 6.1 0 1 0 6.1-6.1 6.1 6.1 0 0 0-6.1 6.1z" fill="#ccc" data-name="Path 484"/>
-                  <path transform="translate(-283.37 -280.43)" d="m347.77 568.46a7.317 7.317 0 1 1 7.318 7.318 7.317 7.317 0 0 1-7.318-7.318zm1.22 0a6.1 6.1 0 1 0 6.1-6.1 6.1 6.1 0 0 0-6.1 6.1z" fill="#ccc" data-name="Path 485"/>
-                  <g transform="translate(307.1 141.97)" data-name="girl ideation">
-                     <path transform="translate(-776.63 -360.6)" d="M863.168,490.56a7.592,7.592,0,0,1-6.374,1.172h0a7.585,7.585,0,0,1-5.381-9.279q.039-.148.085-.295a7.318,7.318,0,0,1,.417-1.037L837,414.177a6.072,6.072,0,1,1,11.637-3.476q.019.063.036.126l14.075,67.145a7.576,7.576,0,0,1,.416,12.588Z" fill="#fed8db" data-name="Path 486"/>
-                     <path transform="translate(-798.57 -486.42)" d="m904.91 760h-8.087l-3.848-31.194h11.936z" fill="#fed8db" data-name="Path 487"/>
-                     <path transform="translate(-790.84 -504.7)" d="m899.24 786.11h-26.076v-0.33a10.15 10.15 0 0 1 10.148-10.149h15.928z" fill="#2f2e41" data-name="Path 490"/>
-                     <path transform="translate(-749.4 -484.88)" d="m774.66 758.2-7.694-2.49 5.939-30.863 11.357 3.674z" fill="#fed8db" data-name="Path 491"/>
-                     <path transform="translate(-738.16 -501.57)" d="m762.97 782.99-24.809-8.026 0.1-0.314a10.151 10.151 0 0 1 12.781-6.533l15.153 4.9z" fill="#2f2e41" data-name="Path 494"/>
-                     <circle transform="translate(47.896 8.22)" cx="13.644" cy="13.644" r="13.644" fill="#fed8db" data-name="Ellipse 82"/>
-                     <path transform="translate(-750.85 -358.63)" d="M830.729,433.531c1.9-7.047-6.791-29.148-7.5-31.953-3.387-.782-11.236.717-16.061-.276-6.86,5.732-12.318,13.92-16.088,17.806-3.922,4.04-6.45,6.778-2.4,16.234a54.3,54.3,0,0,1,3.82,23.467l3.275,28.925s-13.644,38.2-12.553,63.854l-12.553,62.76a8.86,8.86,0,0,0,11.461,3.275s18.01-32.2,16.373-55.667l19.647-43.661s13.644,41.477,17.464,45.3l9.824,58.942s9.278,2.729,13.644,0c0,0,1.637-56.759-7.641-66.037,0,0-9.278-39.294-7.095-49.664s2.729-26.2-13.644-40.386c0,0,.165.075-4.912-9.278Z" fill="#2b2b2b" data-name="Path 495"/>
-                     <path transform="translate(-768.78 -331.32)" d="M837.438,332.1h0a11.807,11.807,0,0,0-2.279.227,9.988,9.988,0,0,0-4.351-1h-.4c-7.614,0-13.786,6.891-13.786,15.388h2.551l.412-3.136.6,3.136h2.125a30.075,30.075,0,0,0-.987,7.71v15.663h3.857l2.233-5.8-.559,5.8h24.793l2.03-5.276-.507,5.276h2.792v-12.3C855.971,343.6,847.674,332.1,837.438,332.1Z" fill="#986a3c" data-name="Path 496"/>
-                     <path transform="translate(-758.32 -365.13)" d="M798.528,502.839a7.591,7.591,0,0,1-6.206-1.867h0a7.585,7.585,0,0,1-.553-10.712q.1-.115.212-.226a7.31,7.31,0,0,1,.845-.732l17.288-66.367a6.072,6.072,0,1,1,11.942,2.211q-.013.068-.027.136L803.9,491.45a7.576,7.576,0,0,1-5.373,11.39Z" fill="#fed8db" data-name="Path 497"/>
-                  </g>
-               </g>
-            </svg>
-         </div>
-      </section>
-      <section id="dagverloop" class="o-section">
-         <div class="o-row">
-            <h2 class="u-color-accent-1">Dagverloop</h2>
-            <div class="c-timeline">
-               <div> 
-                  <div class="c-timeline-item c-timeline-item-left">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">07:30-9:00</p>
-                        <p>Onthaal van de kinderen.</p>
-                     </div>
-                  </div>
-                  <div class="c-timeline-item c-timeline-item-right u-mt-xxxl">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">09:00</p>
-                        <p>Kringmomentje: Op dit moment zingen we samen liedjes en bespreken we de dagen van de week en het weer.</p>
-                     </div>
-                  </div>
-                   <div class="c-timeline-item c-timeline-item-left">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">09:20</p>
-                        <p>De kindjes hebben een vrij spel moment of we doen samen een begeleidende activiteit: knutselen, bewegingsparcours,… met de begeleidende activiteiten hebben we oog om de ontwikkeling extra te stimuleren. De jongste kindjes gaan dan naar bed. Natuurlijk houden wij rekening met het ritme van elk kind.</p>
-                     </div>
-                  </div>
-                  <div class="c-timeline-item c-timeline-item-right">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">10:30</p>
-                        <p>Gaan we aan tafel en drinken we verse soep.</p>
-                     </div>
-                  </div>
-                   <div class="c-timeline-item c-timeline-item-left">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">11:00</p>
-                        <p>Eetmoment: We bieden dagelijks gevarieerde en verse voeding aan.</p>
-                     </div>
-                  </div>
-                  <div class="c-timeline-item c-timeline-item-right">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">12:00</p>
-                        <p>We doen een kringmoment met de peuters waarbij de kindjes aan de hand van een prentenmap liedjes mogen kiezen. Daarna gaan de peuters slapen.</p>
-                     </div>
-                  </div>
-                   <div class="c-timeline-item c-timeline-item-left">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">13:00</p>
-                        <p>De kindjes die in de voormiddag geslapen hebben doen ook een slaapje.</p>
-                     </div>
-                  </div>
-                  <div class="c-timeline-item c-timeline-item-right">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">14:00</p>
-                        <p>Kindjes die wakker zijn worden uit bed gehaald.</p>
-                     </div>
-                  </div>
-                  <div class="c-timeline-item c-timeline-item-left">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">15:00</p>
-                        <p>Vieruurtje: fruitpap. de peuters krijgen stukjes fruit na het fruit krijgen ze een koekje.</p>
-                     </div>
-                  </div>
-                   <div class="c-timeline-item c-timeline-item-right">
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">16:00-18:00</p>
-                        <p>vrij spelmoment. Kindjes worden afgehaald en we vertellen aan de ouders hoe de dag van het kind is verlopen.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="c-timeline-line"></div>
-               <div> 
-                 
-               </div>
-            </div>
-            <!-- <div class="c-timeline u-mb--md">
-            <div class="c-timeline-line"></div>
-            <div class="c-timeline-item-holder">
-            <div class="c-timeline-item">
-               <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="3"></circle>
-               </svg>
-               <div class="c-timeline-box">
-                  <p class="u-font-weight--bold u-mb--sm">07:30-9:00</p>
-                  <p>Onthaal van de kinderen.</p>
-               </div>
-            </div>
-            <div class="c-timeline-item">
-               <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="3"></circle>
-               </svg>
-               <div class="c-timeline-box">
-                  <p class="u-font-weight--bold u-mb--sm">09:00</p>
-                  <p>Kringmomentje:Op dit moment zingen we samen liedjes en bespreken we de dagen van de week en het weer.</p>
-               </div>
-            </div>
-            <div class="c-timeline-item">
-               <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="3"></circle>
-               </svg>
-               <div class="c-timeline-box">
-                  <p class="u-font-weight--bold u-mb--sm">09:20</p>
-                  <p>De kindjes hebben een vrij spel moment of we doen samen een begeleidende activiteit: knutselen, bewegingsparcours,… met de begeleidende activiteiten hebben we oog om de ontwikkeling extra te stimuleren. De jongste kindjes gaan dan naar bed. Natuurlijk houden wij rekening met het ritme van elk kind.</p>
-               </div>
-              
-            </div>
-			<div class="c-timeline-item">
-                  <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <circle cx="12" cy="12" r="10"></circle>
-                     <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                  <div class="c-timeline-box">
-                     <p class="u-font-weight--bold u-mb--sm">10:30</p>
-                     <p>Gaan we aan tafel en drinken we verse soep.</p>
-                  </div>
-            </div>
-            <div class="c-timeline-item">
-            <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               <circle cx="12" cy="12" r="10"></circle>
-               <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <div class="c-timeline-box">
-               <p class="u-font-weight--bold u-mb--sm">11:00</p>
-               <p>Eetmoment: We bieden dagelijks gevarieerde en verse voeding aan.
-               </p>
-            </div>
-			</div>
-                  </div>
-                  <div class="c-timeline u-mb--md">
-            <div class="c-timeline-line"></div>
-            <div class="c-timeline-item-holder">
-            <div class="c-timeline-item">
-            <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               <circle cx="12" cy="12" r="10"></circle>
-               <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <div class="c-timeline-box">
-               <p class="u-font-weight--bold u-mb--sm">12:00</p>
-               <p>We doen een kringmoment met de peuters waarbij de kindjes aan de hand van een prentenmap liedjes mogen kiezen. Daarna gaan de peuters slapen.
-               </p>
-            </div>
-			</div>
-            <div class="c-timeline-item">
-               <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="3"></circle>
-               </svg>
-               <div class="c-timeline-box">
-                  <p class="u-font-weight--bold u-mb--sm">13:00</p>
-                  <p>De kindjes die in de voormiddag geslapen hebben doen ook een slaapje.
-                  </p>
-               </div>
-			   </div>
-               <div class="c-timeline-item">
-                  <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <circle cx="12" cy="12" r="10"></circle>
-                     <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                  <div class="c-timeline-box">
-                     <p class="u-font-weight--bold u-mb--sm">14:00</p>
-                     <p> Kindjes die wakker zijn worden uit bed gehaald.
-                     </p>
-                  </div>
-				  </div>
-                  <div class="c-timeline-item">
-                     <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <circle cx="12" cy="12" r="3"></circle>
-                     </svg>
-                     <div class="c-timeline-box">
-                        <p class="u-font-weight--bold u-mb--sm">15:00</p>
-                        <p>Vieruurtje: fruitpap. de peuters krijgen stukjes fruit na het fruit krijgen ze een koekje.
-                        </p>
-                     </div>
-				  </div>
-                     <div class="c-timeline-item">
-                        <svg class="c-timeline-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                           <circle cx="12" cy="12" r="10"></circle>
-                           <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                        <div class="c-timeline-box">
-                           <p class="u-font-weight--bold u-mb--sm">16:00-18:00</p>
-                           <p>vrij spelmoment. Kindjes worden afgehaald en we vertellen aan de ouders hoe de dag van het kind is verlopen.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-		
-				<p>		
-				   we houden rekening met het ritme van elk kind! 
-				</p>
-			</div> -->
-      </section>
-      <section
-         id="onsteam"
-         class="o-section u-background-color--alpha-800 u-border-radius--lg c-team u-box-shadow"
-         >
-      <div class="c-content-container o-row">
-      <h2 class="u-text-align--center u-mb--xxl">Ons team</h2>
-      <div class=" o-layout">
-      <div
-         class="o-layout__item o-layout__item-1-of-2 u-justify-content--center"
-         >
-      <article class="c-team-member c-team-member--1">
-      <div class="c-team-member__img-holder"><img class="c-team-member__img" src="./img/jpg/tessa.jpg" alt="Foto van Tessa"></div>
-      <h3 class="u-text-align--center u-mb--md">
-      Tessa<br />Vanhouteghem
-      </h3>
-      <p class="u-mb--xl">20 jaar | Diploma kinderbegeleider</p>
-      <svg
-         class="c-team-member__bio-icon u-mb--xl"
-         xmlns="http://www.w3.org/2000/svg"
-         height="24px"
-         viewBox="0 0 24 24"
-         >
-      <path d="M0 0h24v24H0V0z" fill="none" />
-      <path
-         d="M7.17 17c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94zm10 0c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94z"
-         />
-      </svg>
-      <p class="u-text-align--center u-max-width--sm">
-      Vol enthousiasme sta ik in KDV Harlekijn. Mijn doel is om elk kind op zijn/haar tempo iets bij te leren en hun ontwikkeling te stimuleren. Ik probeer elke dag een lacht te toveren op het gezicht van ieder kind.
-      </p>
-      </article>
+            <img
+              class="c-intro-visual__img"
+              sizes="(max-width: 480px) 100vw, 480px"
+              srcset="
+                ./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_470.jpg 470w,
+                ./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_480.jpg 480w
+              "
+              src="./img/jpg/Harlekijn-1-8138_qenfzo_c_scale,w_480.jpg"
+              alt="Foto van het gebouw waar Kinderopvang Harlekijn zich bevindt."
+            />
+          </div>
+        </article>
       </div>
-      <div
-         class="o-layout__item o-layout__item-1-of-2 u-justify-content--center"
-         >
-      <article class="c-team-member">
-      <div class="c-team-member__img-holder">Image Tessa</div>
-      <h3 class="u-text-align--center u-mb--md">
-      Tessa<br />Vanhouteghem
-      </h3>
-      <p class="u-mb--xl">19 jaar | Diploma kinderbegeleider</p>
-      <svg
-         class="c-team-member__bio-icon u-mb--xl"
-         xmlns="http://www.w3.org/2000/svg"
-         height="24px"
-         viewBox="0 0 24 24"
-         >
-      <path d="M0 0h24v24H0V0z" fill="none" />
-      <path
-         d="M7.17 17c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94zm10 0c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94z"
-         />
-      </svg>
-      <p class="u-text-align--center u-max-width--sm">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
-      voluptates sunt reiciendis, esse necessitatibus quae ipsa earum
-      odio laboriosam fugiat officiis repellat repudiandae debitis
-      corporis alias inventore in quaerat distinctio!
-      </p>
-      </article>
+    </section>
+    <section id="visie" class="o-section u-h-min-screen-50 u-childs-center">
+      <div class="o-row o-layout u-align-items--center u-flex--row-reverse">
+        <article class="o-layout__item o-layout__item-1-of-2">
+          <div>
+            <h2 class="u-color-accent-1">Visie</h2>
+            <div class="c-description u-max-width--md">
+              <p class="u-mb--sm">
+                We zorgen voor een Huislijke, warme omgeving met Aandacht voor
+                elk Individueel kind.
+              </p>
+              <p>
+                Wij bouwen graag een Eerlijke Relatie op met de ouders en vinden
+                hun Inspraak belangrijk. We willen een Leerrijke,
+                Kwaliteitsvolle sfeer bieden met een Jeugdige kijk op een
+                Natuurlijke ontwikkeling van elk kind.
+              </p>
+            </div>
+          </div>
+        </article>
+        <svg
+          class="o-layout__item o-layout__item-1-of-2 c-info__visual"
+          viewBox="0 0 458.64 436"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter
+              id="a"
+              x="0"
+              y="417"
+              width="458.64"
+              height="19"
+              filterUnits="userSpaceOnUse"
+            >
+              <feOffset dy="3" input="SourceAlpha" />
+              <feGaussianBlur result="blur" stdDeviation="3" />
+              <feFlood flood-opacity=".161" />
+              <feComposite in2="blur" operator="in" />
+              <feComposite in="SourceGraphic" />
+            </filter>
+          </defs>
+          <g transform="translate(9)" data-name="visie visual">
+            <path
+              transform="translate(-342.67 -241.55)"
+              d="m537.74 460.48 16.431 28.458 16.426 28.461h-65.717l16.43-28.458z"
+              fill="#33ade6"
+              data-name="Path 421"
+            />
+            <rect
+              transform="translate(30.794 162.42)"
+              width="68.906"
+              height="68.906"
+              fill="#62abd9"
+              data-name="Rectangle 48"
+            />
+            <circle
+              transform="translate(106.4 28.536)"
+              cx="44"
+              cy="44"
+              r="44"
+              fill="#135580"
+              data-name="Ellipse 68"
+            />
+            <path
+              transform="translate(-360.95 -193.08)"
+              d="m551.91 340.69a7.318 7.318 0 1 1 7.318 7.317 7.318 7.318 0 0 1-7.318-7.317zm1.22 0a6.1 6.1 0 1 0 6.1-6.1 6.1 6.1 0 0 0-6.1 6.1z"
+              fill="#ccc"
+              data-name="Path 422"
+            />
+            <path
+              transform="translate(-314.53 -263.64)"
+              d="m441.7 539.83-10.771-11.548 11.551-10.772 10.771 11.548zm-9.054-11.488 9.114 9.771 9.774-9.113-9.114-9.771z"
+              fill="#ccc"
+              data-name="Path 423"
+            />
+            <path
+              transform="translate(-260.18 -162.99)"
+              d="m297.1 273.08-8.766-9.4 9.4-8.765 8.766 9.4zm-7.369-9.35 7.421 7.955 7.953-7.418-7.418-7.953z"
+              fill="#ccc"
+              data-name="Path 424"
+            />
+            <path
+              transform="translate(-304.1 -105.82)"
+              d="m465.64 227.78a60.979 60.979 0 1 1 60.979-60.977 60.979 60.979 0 0 1-60.979 60.979zm0-120.74a59.759 59.759 0 1 0 59.761 59.761 59.759 59.759 0 0 0-59.759-59.759z"
+              fill="#2b2b2b"
+              data-name="Path 425"
+            />
+            <rect
+              transform="matrix(.433 -.901 .901 .433 107.96 142.46)"
+              width="36.372"
+              height="1.22"
+              fill="#2b2b2b"
+              data-name="Rectangle 50"
+            />
+            <rect
+              transform="translate(119.81 188.08) rotate(-61.578)"
+              width="1.22"
+              height="78.896"
+              fill="#2b2b2b"
+              data-name="Rectangle 51"
+            />
+            <path
+              transform="translate(-261.48 -194.06)"
+              d="m380.69 425.85h-89.029v-89.029h89.029zm-87.81-1.22h86.59v-86.59h-86.589z"
+              fill="#2b2b2b"
+              data-name="Path 426"
+            />
+            <path
+              transform="translate(-341.85 -227.44)"
+              d="m595.24 503.78h-92.09l46.049-79.752zm-89.978-1.22h87.865l-43.928-76.093z"
+              fill="#2b2b2b"
+              data-name="Path 427"
+            />
+            <g transform="translate(-9)" filter="url(#a)">
+              <rect
+                transform="translate(9 423)"
+                width="440.64"
+                height="1"
+                fill="#2b2b2b"
+                data-name="Rectangle 53"
+              />
+            </g>
+            <path
+              transform="translate(-283.38 -255.2)"
+              d="M353.492,678.865c-.161-.263-3.954-6.6-5.269-19.75-1.206-12.067-.431-32.407,10.118-60.779,19.984-53.749-4.605-97.118-4.856-97.549l1.213-.7c.061.11,6.409,11.167,10.157,28.774a125.529,125.529,0,0,1-5.2,69.969c-19.95,53.658-5.118,79.059-4.966,79.309Z"
+              fill="#2b2b2b"
+              data-name="Path 481"
+            />
+            <circle
+              transform="translate(82.836 256.21)"
+              cx="9.113"
+              cy="9.113"
+              r="9.113"
+              fill="#33ade6"
+              data-name="Ellipse 75"
+            />
+            <circle
+              transform="translate(55.287 327.8)"
+              cx="9.113"
+              cy="9.113"
+              r="9.113"
+              fill="#33ade6"
+              data-name="Ellipse 78"
+            />
+            <path
+              transform="translate(-296.52 -294.63)"
+              d="m383.91 605.5a7.318 7.318 0 1 1 7.318 7.317 7.317 7.317 0 0 1-7.318-7.317zm1.22 0a6.1 6.1 0 1 0 6.1-6.1 6.1 6.1 0 0 0-6.1 6.1z"
+              fill="#ccc"
+              data-name="Path 484"
+            />
+            <path
+              transform="translate(-283.37 -280.43)"
+              d="m347.77 568.46a7.317 7.317 0 1 1 7.318 7.318 7.317 7.317 0 0 1-7.318-7.318zm1.22 0a6.1 6.1 0 1 0 6.1-6.1 6.1 6.1 0 0 0-6.1 6.1z"
+              fill="#ccc"
+              data-name="Path 485"
+            />
+            <g transform="translate(307.1 141.97)" data-name="girl ideation">
+              <path
+                transform="translate(-776.63 -360.6)"
+                d="M863.168,490.56a7.592,7.592,0,0,1-6.374,1.172h0a7.585,7.585,0,0,1-5.381-9.279q.039-.148.085-.295a7.318,7.318,0,0,1,.417-1.037L837,414.177a6.072,6.072,0,1,1,11.637-3.476q.019.063.036.126l14.075,67.145a7.576,7.576,0,0,1,.416,12.588Z"
+                fill="#fed8db"
+                data-name="Path 486"
+              />
+              <path
+                transform="translate(-798.57 -486.42)"
+                d="m904.91 760h-8.087l-3.848-31.194h11.936z"
+                fill="#fed8db"
+                data-name="Path 487"
+              />
+              <path
+                transform="translate(-790.84 -504.7)"
+                d="m899.24 786.11h-26.076v-0.33a10.15 10.15 0 0 1 10.148-10.149h15.928z"
+                fill="#2f2e41"
+                data-name="Path 490"
+              />
+              <path
+                transform="translate(-749.4 -484.88)"
+                d="m774.66 758.2-7.694-2.49 5.939-30.863 11.357 3.674z"
+                fill="#fed8db"
+                data-name="Path 491"
+              />
+              <path
+                transform="translate(-738.16 -501.57)"
+                d="m762.97 782.99-24.809-8.026 0.1-0.314a10.151 10.151 0 0 1 12.781-6.533l15.153 4.9z"
+                fill="#2f2e41"
+                data-name="Path 494"
+              />
+              <circle
+                transform="translate(47.896 8.22)"
+                cx="13.644"
+                cy="13.644"
+                r="13.644"
+                fill="#fed8db"
+                data-name="Ellipse 82"
+              />
+              <path
+                transform="translate(-750.85 -358.63)"
+                d="M830.729,433.531c1.9-7.047-6.791-29.148-7.5-31.953-3.387-.782-11.236.717-16.061-.276-6.86,5.732-12.318,13.92-16.088,17.806-3.922,4.04-6.45,6.778-2.4,16.234a54.3,54.3,0,0,1,3.82,23.467l3.275,28.925s-13.644,38.2-12.553,63.854l-12.553,62.76a8.86,8.86,0,0,0,11.461,3.275s18.01-32.2,16.373-55.667l19.647-43.661s13.644,41.477,17.464,45.3l9.824,58.942s9.278,2.729,13.644,0c0,0,1.637-56.759-7.641-66.037,0,0-9.278-39.294-7.095-49.664s2.729-26.2-13.644-40.386c0,0,.165.075-4.912-9.278Z"
+                fill="#2b2b2b"
+                data-name="Path 495"
+              />
+              <path
+                transform="translate(-768.78 -331.32)"
+                d="M837.438,332.1h0a11.807,11.807,0,0,0-2.279.227,9.988,9.988,0,0,0-4.351-1h-.4c-7.614,0-13.786,6.891-13.786,15.388h2.551l.412-3.136.6,3.136h2.125a30.075,30.075,0,0,0-.987,7.71v15.663h3.857l2.233-5.8-.559,5.8h24.793l2.03-5.276-.507,5.276h2.792v-12.3C855.971,343.6,847.674,332.1,837.438,332.1Z"
+                fill="#986a3c"
+                data-name="Path 496"
+              />
+              <path
+                transform="translate(-758.32 -365.13)"
+                d="M798.528,502.839a7.591,7.591,0,0,1-6.206-1.867h0a7.585,7.585,0,0,1-.553-10.712q.1-.115.212-.226a7.31,7.31,0,0,1,.845-.732l17.288-66.367a6.072,6.072,0,1,1,11.942,2.211q-.013.068-.027.136L803.9,491.45a7.576,7.576,0,0,1-5.373,11.39Z"
+                fill="#fed8db"
+                data-name="Path 497"
+              />
+            </g>
+          </g>
+        </svg>
       </div>
-      </div>
-      </div>
-      </section>
-      <section id="omgeving" class="o-section">
+    </section>
+    <section id="dagverloop" class="o-section">
       <div class="o-row">
-      <h2 class="u-color-accent-1">Omgeving</h2>
-      <div class="c-album-container">
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_517.jpg 517w,
-         ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_733.jpg 733w,
-         ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_838.jpg 838w,
-         ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_860.jpg"
-         alt="Foto van het logo op de voorgevel."
-         />
-      </article>
-      <article class="c-album-item c-album-item--vert">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_458.jpg 458w,
-         ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_575.jpg 575w,
-         ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_695.jpg 695w,
-         ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_808.jpg 808w,
-         ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_860.jpg"
-         alt="Foto van het stiftbord."
-         />
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_518.jpg 518w,
-         ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_682.jpg 682w,
-         ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_849.jpg 849w,
-         ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_860.jpg"
-         alt="Foto van de speelzone binnen met speelgoed."
-         />
-      <svg
-         class="c-album-item__blob c-album-item__blob-1"
-         viewBox="0 0 912.36 929.84"
-         xmlns="http://www.w3.org/2000/svg"
-         >
-      <path
-         transform="translate(87.586 88.108)"
-         d="m649.17-27.932c76.742 45.676 144.59 109.28 165.72 186.75 21.132 78.054-3.337 169.98-2.781 263.07 0.556 92.508 26.693 185.59 2.224 257.87s-99.542 123.73-176.84 125.46c-77.855 2.313-157.93-45.1-244.13-34.69-85.64 10.407-177.4 78.632-245.24 70.537-67.293-7.516-110.67-92.508-154.04-175.19-42.82-82.677-86.752-163.62-81.191-241.68 5-77.475 58.947-152.64 117.89-206.99 58.947-54.927 122.9-89.039 185.18-143.96s122.9-130.09 196.3-153.22 159.61 5.782 236.9 52.036z"
-         />
-      </svg>
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_535.jpg 535w,
-         ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_737.jpg 737w,
-         ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_860.jpg"
-         alt="Foto van de speelzone met automat."
-         />
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_644.jpg 644w,
-         ./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_860.jpg"
-         alt="Foto van een binnenmuur met een tekening op."
-         />
-      </article>
-      <article class="c-album-item c-album-item--vert">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_559.jpg 559w,
-         ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_756.jpg 756w,
-         ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_860.jpg"
-         alt="Foto van een éénhoorn speelgoed."
-         />
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_669.jpg 669w,
-         ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_808.jpg 808w,
-         ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_860.jpg"
-         alt="Foto van de keuken."
-         />
-      <svg class="c-album-item__blob c-album-item__blob-2" viewBox="0 0 1092.3 1004.4" xmlns="http://www.w3.org/2000/svg">
-      <path
-         transform="translate(89.899 87.47)"
-         d="m883.98-0.367c81.4 72.523 129.5 176.13 116.18 274.55-14.061 98.424-89.544 191.67-137.65 257.53s-69.563 103.6-85.844 150.23c-17.021 46.622-28.121 102.12-60.682 152.45s-86.583 95.465-130.99 79.184c-44.4-17.021-79.183-94.724-184.27-102.86s-280.47 52.542-384.82 22.2c-103.6-30.341-136.91-151.71-74-236.81s222.01-133.2 311.55-188.71c90.284-55.502 110.26-117.66 151.71-212.39 42.181-94.723 106.56-221.27 195.37-264.93 88.803-42.922 202.77-2.22 283.43 69.563z"
-         />
-      </svg>
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_714.jpg 714w,
-         ./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_860.jpg"
-         alt="Foto van de pamper verversplek."
-         />
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_657.jpg 657w,
-         ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_841.jpg 841w,
-         ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_860.jpg"
-         alt="Foto van de slaapkamer."
-         />
-      <svg class="c-album-item__blob c-album-item__blob-3" viewBox="0 0 1125.7 1035.2" xmlns="http://www.w3.org/2000/svg">
-      <path transform="translate(89.899 87.47)" d="m32.119 2.3c-83.899 74.749-133.48 181.53-119.75 282.97 14.492 101.44 92.289 197.54 141.86 265.43s71.7 106.78 88.475 154.83c17.543 48.051 28.983 105.26 62.543 157.12s89.238 98.391 135 81.611c45.763-17.542 81.611-97.628 189.92-106.02s289.07 54.153 396.61 22.882c106.78-31.271 141.1-156.36 76.272-244.07s-228.82-137.29-321.1-194.5c-93.053-57.204-113.64-121.27-156.35-218.9-43.478-97.628-109.84-228.05-201.36-273.05-91.526-44.238-208.98-2.289-292.12 71.692z"/>
-      </svg>
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_623.jpg 623w,
-         ./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_860.jpg"
-         alt="Foto van de slaapkamer."
-         />
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_478.jpg 478w,
-         ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_618.jpg 618w,
-         ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_776.jpg 776w,
-         ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_796.jpg 796w,
-         ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_860.jpg"
-         alt="Foto van de tuin met glijbaan."
-         />
-      </article>
-      <article class="c-album-item">
-      <img
-         class="c-album-item__img"
-         sizes="(max-width: 860px) 100vw, 860px"
-         srcset="
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_300.jpg 300w,
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_465.jpg 465w,
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_582.jpg 582w,
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_723.jpg 723w,
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_828.jpg 828w,
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_843.jpg 843w,
-         ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_860.jpg 860w"
-         src="./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_860.jpg"
-         alt="Foto van de tuin."
-         />
-      </article>
+        <h2 class="u-color-accent-1">Dagverloop</h2>
+        <div class="c-timeline">
+          <div>
+            <div class="c-timeline-item c-timeline-item-left">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">07:30-9:00</p>
+                <p>Onthaal van de kinderen.</p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-right u-mt-xxxl">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">09:00</p>
+                <p>
+                  Kringmomentje: Op dit moment zingen we samen liedjes en
+                  bespreken we de dagen van de week en het weer.
+                </p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-left">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">09:20</p>
+                <p>
+                  De kindjes hebben een vrij spel moment of we doen samen een
+                  begeleidende activiteit: knutselen, bewegingsparcours,… met de
+                  begeleidende activiteiten hebben we oog om de ontwikkeling
+                  extra te stimuleren. De jongste kindjes gaan dan naar bed.
+                  Natuurlijk houden wij rekening met het ritme van elk kind.
+                </p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-right">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">10:30</p>
+                <p>Gaan we aan tafel en drinken we verse soep.</p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-left">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">11:00</p>
+                <p>
+                  Eetmoment: We bieden dagelijks gevarieerde en verse voeding
+                  aan.
+                </p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-right">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">12:00</p>
+                <p>
+                  We doen een kringmoment met de peuters waarbij de kindjes aan
+                  de hand van een prentenmap liedjes mogen kiezen. Daarna gaan
+                  de peuters slapen.
+                </p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-left">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">13:00</p>
+                <p>
+                  De kindjes die in de voormiddag geslapen hebben doen ook een
+                  slaapje.
+                </p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-right">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">14:00</p>
+                <p>Kindjes die wakker zijn worden uit bed gehaald.</p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-left">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">15:00</p>
+                <p>
+                  Vieruurtje: fruitpap. de peuters krijgen stukjes fruit na het
+                  fruit krijgen ze een koekje.
+                </p>
+              </div>
+            </div>
+            <div class="c-timeline-item c-timeline-item-right">
+              <div class="c-timeline-box">
+                <p class="u-font-weight--bold u-mb--sm">16:00-18:00</p>
+                <p>
+                  vrij spelmoment. Kindjes worden afgehaald en we vertellen aan
+                  de ouders hoe de dag van het kind is verlopen.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="c-timeline-line"></div>
+          <div></div>
+        </div>
       </div>
-      <a
-         class="c-album-source"
-         target="blank"
-         href="https://www.chessbonte.com/"
-         >Foto's genomen door Chess Bonte</a
-         >
+    </section>
+    <section
+      id="onsteam"
+      class="
+        o-section
+        u-background-color--alpha-800
+        u-border-radius--lg
+        c-team
+        u-box-shadow
+      "
+    >
+      <div class="c-content-container o-row">
+        <h2 class="u-text-align--center u-mb--xxl">Ons team</h2>
+        <div class="o-layout">
+          <div
+            class="
+              o-layout__item o-layout__item-1-of-2
+              u-justify-content--center
+            "
+          >
+            <article class="c-team-member c-team-member--1">
+              <div class="c-team-member__img-holder">
+                <img
+                  class="c-team-member__img"
+                  src="./img/jpg/tessa.jpg"
+                  alt="Foto van Tessa"
+                />
+              </div>
+              <h3 class="u-text-align--center u-mb--md">
+                Tessa<br />Vanhouteghem
+              </h3>
+              <p class="u-mb--xl">20 jaar | Diploma kinderbegeleider</p>
+              <svg
+                class="c-team-member__bio-icon u-mb--xl"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M7.17 17c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94zm10 0c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94z"
+                />
+              </svg>
+              <p class="u-text-align--center u-max-width--sm">
+                Vol enthousiasme sta ik in KDV Harlekijn. Mijn doel is om elk
+                kind op zijn/haar tempo iets bij te leren en hun ontwikkeling te
+                stimuleren. Ik probeer elke dag een lacht te toveren op het
+                gezicht van ieder kind.
+              </p>
+            </article>
+          </div>
+          <div
+            class="
+              o-layout__item o-layout__item-1-of-2
+              u-justify-content--center
+            "
+          >
+            <article class="c-team-member">
+              <div class="c-team-member__img-holder">Image Tessa</div>
+              <h3 class="u-text-align--center u-mb--md">
+                Tessa<br />Vanhouteghem
+              </h3>
+              <p class="u-mb--xl">19 jaar | Diploma kinderbegeleider</p>
+              <svg
+                class="c-team-member__bio-icon u-mb--xl"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M7.17 17c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94zm10 0c.51 0 .98-.29 1.2-.74l1.42-2.84c.14-.28.21-.58.21-.89V8c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h2l-1.03 2.06c-.45.89.2 1.94 1.2 1.94z"
+                />
+              </svg>
+              <p class="u-text-align--center u-max-width--sm">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+                voluptates sunt reiciendis, esse necessitatibus quae ipsa earum
+                odio laboriosam fugiat officiis repellat repudiandae debitis
+                corporis alias inventore in quaerat distinctio!
+              </p>
+            </article>
+          </div>
+        </div>
       </div>
-      </section>
-      <section
-         id="contact"
-         class="o-section u-background-color--alpha-500-to-700 u-mb--none u-border-radius__top--lg"
-         >
+    </section>
+    <section id="omgeving" class="o-section">
+      <div class="o-row">
+        <h2 class="u-color-accent-1">Omgeving</h2>
+        <div class="c-album-container">
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_517.jpg 517w,
+                ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_733.jpg 733w,
+                ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_838.jpg 838w,
+                ./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-4-8219_ey09mq_c_scale,w_860.jpg"
+              alt="Foto van het logo op de voorgevel."
+            />
+          </article>
+          <article class="c-album-item c-album-item--vert">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_458.jpg 458w,
+                ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_575.jpg 575w,
+                ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_695.jpg 695w,
+                ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_808.jpg 808w,
+                ./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-6-8147_oczmkh_c_scale,w_860.jpg"
+              alt="Foto van het stiftbord."
+            />
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_518.jpg 518w,
+                ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_682.jpg 682w,
+                ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_849.jpg 849w,
+                ./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-9-8152_zk1yzf_c_scale,w_860.jpg"
+              alt="Foto van de speelzone binnen met speelgoed."
+            />
+            <svg
+              class="c-album-item__blob c-album-item__blob-1"
+              viewBox="0 0 912.36 929.84"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                transform="translate(87.586 88.108)"
+                d="m649.17-27.932c76.742 45.676 144.59 109.28 165.72 186.75 21.132 78.054-3.337 169.98-2.781 263.07 0.556 92.508 26.693 185.59 2.224 257.87s-99.542 123.73-176.84 125.46c-77.855 2.313-157.93-45.1-244.13-34.69-85.64 10.407-177.4 78.632-245.24 70.537-67.293-7.516-110.67-92.508-154.04-175.19-42.82-82.677-86.752-163.62-81.191-241.68 5-77.475 58.947-152.64 117.89-206.99 58.947-54.927 122.9-89.039 185.18-143.96s122.9-130.09 196.3-153.22 159.61 5.782 236.9 52.036z"
+              />
+            </svg>
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_535.jpg 535w,
+                ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_737.jpg 737w,
+                ./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-19-8160_vlc72b_c_scale,w_860.jpg"
+              alt="Foto van de speelzone met automat."
+            />
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_644.jpg 644w,
+                ./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-10-8153_ivddr9_c_scale,w_860.jpg"
+              alt="Foto van een binnenmuur met een tekening op."
+            />
+          </article>
+          <article class="c-album-item c-album-item--vert">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_559.jpg 559w,
+                ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_756.jpg 756w,
+                ./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-8-8151_ppsrno_c_scale,w_860.jpg"
+              alt="Foto van een éénhoorn speelgoed."
+            />
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_669.jpg 669w,
+                ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_808.jpg 808w,
+                ./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-27-8168_nlrk8g_c_scale,w_860.jpg"
+              alt="Foto van de keuken."
+            />
+            <svg
+              class="c-album-item__blob c-album-item__blob-2"
+              viewBox="0 0 1092.3 1004.4"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                transform="translate(89.899 87.47)"
+                d="m883.98-0.367c81.4 72.523 129.5 176.13 116.18 274.55-14.061 98.424-89.544 191.67-137.65 257.53s-69.563 103.6-85.844 150.23c-17.021 46.622-28.121 102.12-60.682 152.45s-86.583 95.465-130.99 79.184c-44.4-17.021-79.183-94.724-184.27-102.86s-280.47 52.542-384.82 22.2c-103.6-30.341-136.91-151.71-74-236.81s222.01-133.2 311.55-188.71c90.284-55.502 110.26-117.66 151.71-212.39 42.181-94.723 106.56-221.27 195.37-264.93 88.803-42.922 202.77-2.22 283.43 69.563z"
+              />
+            </svg>
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_714.jpg 714w,
+                ./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-24-8165_rewo6g_c_scale,w_860.jpg"
+              alt="Foto van de pamper verversplek."
+            />
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_657.jpg 657w,
+                ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_841.jpg 841w,
+                ./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-58-8204_ifbo8v_c_scale,w_860.jpg"
+              alt="Foto van de slaapkamer."
+            />
+            <svg
+              class="c-album-item__blob c-album-item__blob-3"
+              viewBox="0 0 1125.7 1035.2"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                transform="translate(89.899 87.47)"
+                d="m32.119 2.3c-83.899 74.749-133.48 181.53-119.75 282.97 14.492 101.44 92.289 197.54 141.86 265.43s71.7 106.78 88.475 154.83c17.543 48.051 28.983 105.26 62.543 157.12s89.238 98.391 135 81.611c45.763-17.542 81.611-97.628 189.92-106.02s289.07 54.153 396.61 22.882c106.78-31.271 141.1-156.36 76.272-244.07s-228.82-137.29-321.1-194.5c-93.053-57.204-113.64-121.27-156.35-218.9-43.478-97.628-109.84-228.05-201.36-273.05-91.526-44.238-208.98-2.289-292.12 71.692z"
+              />
+            </svg>
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_623.jpg 623w,
+                ./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-60-8206_smdrsn_c_scale,w_860.jpg"
+              alt="Foto van de slaapkamer."
+            />
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_478.jpg 478w,
+                ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_618.jpg 618w,
+                ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_776.jpg 776w,
+                ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_796.jpg 796w,
+                ./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-38-8180_rypqdu_c_scale,w_860.jpg"
+              alt="Foto van de tuin met glijbaan."
+            />
+          </article>
+          <article class="c-album-item">
+            <img
+              class="c-album-item__img"
+              sizes="(max-width: 860px) 100vw, 860px"
+              srcset="
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_300.jpg 300w,
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_465.jpg 465w,
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_582.jpg 582w,
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_723.jpg 723w,
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_828.jpg 828w,
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_843.jpg 843w,
+                ./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_860.jpg 860w
+              "
+              src="./img/jpg/Harlekijn-45-8201_dwrhjp_c_scale,w_860.jpg"
+              alt="Foto van de tuin."
+            />
+          </article>
+        </div>
+        <a
+          class="c-album-source"
+          target="blank"
+          href="https://www.chessbonte.com/"
+          >Foto's genomen door Chess Bonte</a
+        >
+      </div>
+    </section>
+    <section
+      id="contact"
+      class="
+        o-section
+        u-background-color--alpha-500-to-700
+        u-mb--none
+        u-border-radius__top--lg
+      "
+    >
       <div class="o-row c-content-container">
-      <h2>Contact</h2>
-      <div class="c-contact u-mb--xl">
-      <article class="c-contact__item">
-      <div>
-      <h3>Adres</h3>
-      <p class="u-mb--sm">Guide Gezellestraat 21</p>
-      <p class="u-mb--xl">9830 Sint-Martens-Latem</p>
-      <h3>Telefoon</h3>
-      <p>09/242.93.40 (DOG De Pinte)</p>
+        <h2>Contact</h2>
+        <div class="c-contact u-mb--xl">
+          <article class="c-contact__item">
+            <div>
+              <h3>Adres</h3>
+              <p class="u-mb--sm">Guide Gezellestraat 21</p>
+              <p class="u-mb--xl">9830 Sint-Martens-Latem</p>
+              <h3>Telefoon</h3>
+              <p>09/242.93.40 (DOG De Pinte)</p>
+            </div>
+          </article>
+          <article class="c-contact__item">
+            <div>
+              <h3>Openingsuren</h3>
+              <p class="u-mb--sm js-hour">Maandag: 07:30 - 18:00</p>
+              <p class="u-mb--sm js-hour">Dinsdag: 07:30 - 18:00</p>
+              <p class="u-mb--sm js-hour">Woensdag: 07:30 - 18:00</p>
+              <p class="u-mb--sm js-hour">Donderdag: 07:30 - 18:00</p>
+              <p class="u-mb--sm js-hour">Vrijdag: 07:30 - 18:00</p>
+              <p class="u-mb--sm js-hour">Zaterdag: Gesloten</p>
+              <p class="js-hour">Zondag: Gesloten</p>
+            </div>
+          </article>
+          <div id="map" class="u-mt-xxxl"></div>
+        </div>
       </div>
-      </article>
-      <article class="c-contact__item">
-      <div">
-      <h3>Openingsuren</h3>
-      <p class="u-mb--sm js-hour">Maandag: 07:30 - 18:00</p>
-      <p class="u-mb--sm js-hour">Dinsdag: 07:30 - 18:00</p>
-      <p class="u-mb--sm js-hour">Woensdag: 07:30 - 18:00</p>
-      <p class="u-mb--sm js-hour">Donderdag: 07:30 - 18:00</p>
-      <p class="u-mb--sm js-hour">Vrijdag: 07:30 - 18:00</p>
-      <p class="u-mb--sm js-hour">Gesloten</p>
-      <p class="js-hour">Gesloten</p>
-      </div>
-      </article>
-      <div id="map"></div>
-      </div>
-      </div>
-      </section>
-      <footer class="c-footer">&copy; Niels Onderbeke</footer>
-   </body>
+    </section>
+    <footer class="c-footer">&copy; Niels Onderbeke</footer>
+  </body>
 </html>

@@ -323,7 +323,6 @@ a:visited {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-
 	color: var(--global-color-neutral-100);
 }
 
@@ -800,6 +799,10 @@ a:visited {
 	text-align: center;
 }
 
+.u-mt-lg{
+		margin-top: var(--global-whitespace-lg);
+}
+
 .u-mt-xxxl{
 		margin-top: var(--global-whitespace-xxxl);
 }
@@ -842,4 +845,17 @@ a:visited {
 
 .u-font-weight--bold {
 	font-weight: bold;
+}
+
+.u-h-screen{
+	height: 100vh;
+}
+
+.u-h-min-screen-50{
+	min-height: 50vh;
+}
+
+.u-childs-center{
+	display: grid;
+	place-items: center;
 }
