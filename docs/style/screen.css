@@ -414,7 +414,6 @@ a:visited {
   top: 0;
   right: 0;
   z-index: 20;
-  background-color: var(--global-color-alpha-900);
   justify-content: center;
   align-items: center;
   text-align: center;
