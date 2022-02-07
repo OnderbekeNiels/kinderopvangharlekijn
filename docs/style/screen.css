@@ -783,6 +783,8 @@ a:visited {
 	/* grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); */
   /* grid-template-columns: ; */
   margin-bottom: var(--global-whitespace-md);
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .c-album-item {
@@ -790,8 +792,8 @@ a:visited {
   -o-object-fit: cover;
   object-fit: cover;
   position: relative;
-  min-width: 100%;
-  padding-bottom: calc(6/5 * 100%);
+  min-width: 75%;
+  padding-bottom: calc(6/5 * 75%);
 }
 
 .c-album-item__img {
@@ -835,6 +837,11 @@ a:visited {
 }
 
 @media screen and (min-width: 40rem) {
+
+  .c-album-container {
+  margin: 0 0 var(--global-whitespace-md) 0;
+}
+
   .c-album-item {
     padding-bottom: calc(3 / 4 * 100%);
   }
